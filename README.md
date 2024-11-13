@@ -1,4 +1,4 @@
-# Chicken365
+# Chicken Wild Tournament
 
 [Web Preview]()cambiar
 
