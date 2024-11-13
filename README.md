@@ -1,1 +1,1 @@
-# Chicken365
+# Chicken Wild Tournament
