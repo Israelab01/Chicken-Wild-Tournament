@@ -23,7 +23,6 @@ body, html {
   align-items: flex-end;
   position: relative;
   padding: 10px 20px;
-
 }
 
 /* Estilos para el botón Start */
@@ -38,7 +37,6 @@ body, html {
   transition: transform 0.2s ease;
   margin-right: 100px;
   font-weight: 1000;
-  
 }
 
 .start-btn:hover {
@@ -66,5 +64,33 @@ body, html {
       font-size: 24px;
       padding: 6px 12px;
       letter-spacing: 1px;
+  }
+}
+
+/* Media Query para pantallas grandes (2560x1440) */
+@media (min-width: 2560px) and (max-width: 3839px) and (min-height: 1440px) {
+  .start-btn {
+      font-size: 64px;  
+      padding: 10px 20px;
+      letter-spacing: 2.5px;
+      margin-right: 120px; 
+  }
+
+  .bg-container {
+      padding: 20px 40px;
+  }
+}
+
+/* Media Query para pantallas ultra grandes (3840x2160) */
+@media (min-width: 3840px) and (min-height: 2160px) {
+  .start-btn {
+      font-size: 80px; 
+      padding: 12px 24px;
+      letter-spacing: 3px;
+      margin-right: 150px; 
+  }
+
+  .bg-container {
+      padding: 30px 50px;
   }
 }
