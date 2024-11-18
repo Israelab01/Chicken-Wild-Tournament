@@ -18,17 +18,10 @@
             <h2 class="popup-title">Menu</h2>
             <div class="button-menu">
               <h3 class="popup-button-reiniciar" onclick="location.reload()">Reiniciar</h3>
-              <h3 class="popup-button-salir" onclick="closeTab()">Salir</h3>
+              <h3 class="popup-button-salir" onclick="backToPresala()">Salir</h3>
             </div>
         </div>
       </div>
-
-      <div id="bracket" class="popup hidden">
-        <div class="popup-content">
-            <span class="close-icon" onclick="closeBracket()">×</span>
-        </div>
-      </div>
-
     </header>
     <main>
       <div class="player player-left">
@@ -58,6 +51,11 @@
         <button id="start-btn" class="botonesImp">Iniciar</button>
         <button id="btnPlayerList" class="botonesImp">Jugadores</button>
         <button id="bracket-btn" class="botonesImp" onclick="openBracket()">Bracket</button>
+      </div>
+      <div id="bracket" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-icon" onclick="closeBracket()">×</span>
+        </div>
       </div>
       <div id="playerListModal" class="modal">
         <div class="modal-content">

@@ -1,19 +1,18 @@
-
 let listaJugadores = ["Alejandro", "Pablo Noria", "Javier", "Felipe", "Nando", "Mauricio", "Pablo Jimenez", 
     "Samuel", "Nicolás", "Israel", "Manolo", "Rubén", "Jairo", "Adrián", "Judith", "Mario"];
 
-let listaHuevos = ["Madera", "Bronce", "Plata", "Oro", "Platino", "Diamante"];
+let listaHuevos = ["Madera", "Bronce", "Plata", "Oro", "Esmeralda", "Diamante"];
 
 let jerarquiaHuevos = {
     "Madera": 0,
     "Bronce": 1,
     "Plata": 2,
     "Oro": 3,
-    "Platino": 4,
+    "Esmeralda": 4,
     "Diamante": 5
 };
 
-
+// Función para mostrar la lista de jugadores en el modal
 function mostrarListaJugadores() {
     const playerList = document.getElementById("playerList");
     playerList.innerHTML = "";  // Limpiar lista actual
@@ -25,7 +24,31 @@ function mostrarListaJugadores() {
     document.getElementById("playerListModal").style.display = "flex";
 }
 
+// Eventos de los botones
 document.getElementById("btnPlayerList").addEventListener("click", mostrarListaJugadores);
+
+// Funcionalidad para el botón "Next"
+document.getElementById("btnNext").addEventListener("click", () => {
+    window.location.href = "juego.html";  // Redirige a la pantalla del juego (ajusta la URL según sea necesario)
+});
+
+// Funcionalidad para cerrar el modal
+document.querySelector(".close").addEventListener("click", () => {
+    document.getElementById("playerListModal").style.display = "none";
+});
+
+// Funcionalidad para cerrar el modal al hacer clic en la "x"
+document.querySelector(".close").addEventListener("click", () => {
+    document.getElementById("playerListModal").style.display = "none";
+});
+
+// Cerrar el modal al hacer clic fuera del contenido del modal
+window.addEventListener("click", (event) => {
+    const modal = document.getElementById("playerListModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
 
 //Asignar huevo aleatoriamente
 function asignarHuevo() {
@@ -102,32 +125,8 @@ function jugar() {
 }
 
 //Ejecutar el juego al hacer clic en el botón
-document.getElementById("start-btn").addEventListener("click", () => {
+document.getElementById("botonJugar").addEventListener("click", () => {
     //Reiniciar la lista de jugadores en cada ejecución
     jugadores = listaJugadores.map(nombre => ({ nombre, huevo: asignarHuevo() }));
     jugar();
 });
-// Función para abrir la ventana emergente
-function openPopup() {
-    document.getElementById("popup").classList.remove("hidden");
-}
-
-
-// Función para abrir la ventana emergente
-function openBracket() {
-    document.getElementById("bracket").classList.remove("hidden");
-}
-
-// Función para cerrar la ventana emergente
-function closePopup() {
-    document.getElementById("popup").classList.add("hidden");
-}
-
-function closeBracket() {
-    document.getElementById("bracket").classList.add("hidden");
-}
-
-// Función para cerrar la pestaña del navegador
-function backToPresala() {
-    window.location.href = "indexpresala.html";
-}
