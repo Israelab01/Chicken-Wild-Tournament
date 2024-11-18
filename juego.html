@@ -21,7 +21,14 @@
               <h3 class="popup-button-salir" onclick="closeTab()">Salir</h3>
             </div>
         </div>
-    </div>
+      </div>
+
+      <div id="bracket" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-icon" onclick="closeBracket()">×</span>
+        </div>
+      </div>
+
     </header>
     <main>
       <div class="player player-left">
@@ -50,7 +57,7 @@
       <div class="buttons">
         <button id="start-btn" class="botonesImp">Iniciar</button>
         <button id="btnPlayerList" class="botonesImp">Jugadores</button>
-        <button id="bracket-btn" class="botonesImp">Bracket</button>
+        <button id="bracket-btn" class="botonesImp" onclick="openBracket()">Bracket</button>
       </div>
       <div id="playerListModal" class="modal">
         <div class="modal-content">
@@ -86,6 +93,9 @@
     </div>
   </div>
   <script src="mainjuego.js"></script>
+
+
+  
 </body>
 </html>
 

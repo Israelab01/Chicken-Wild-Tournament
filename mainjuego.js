@@ -98,9 +98,19 @@ function openPopup() {
     document.getElementById("popup").classList.remove("hidden");
 }
 
+
+// Función para abrir la ventana emergente
+function openBracket() {
+    document.getElementById("bracket").classList.remove("hidden");
+}
+
 // Función para cerrar la ventana emergente
 function closePopup() {
     document.getElementById("popup").classList.add("hidden");
+}
+
+function closeBracket() {
+    document.getElementById("bracket").classList.add("hidden");
 }
 
 // Función para cerrar la pestaña del navegador
