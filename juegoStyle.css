@@ -3,7 +3,7 @@ body {
     font-family: 'Luckiest Guy';
     margin: 0;
     padding: 0;
-    background-image: url("Chicken365/Images/background/FondoPC.png");
+    background-image: url("/Chicken365/Images/background/FondoPC.png");
     background-size: cover;
     background-position: center;
     color: #fff;
