@@ -93,3 +93,17 @@ document.getElementById("start-btn").addEventListener("click", () => {
     jugadores = listaJugadores.map(nombre => ({ nombre, huevo: asignarHuevo() }));
     jugar();
 });
+// Función para abrir la ventana emergente
+function openPopup() {
+    document.getElementById("popup").classList.remove("hidden");
+}
+
+// Función para cerrar la ventana emergente
+function closePopup() {
+    document.getElementById("popup").classList.add("hidden");
+}
+
+// Función para cerrar la pestaña del navegador
+function closeTab() {
+    window.close();
+}
