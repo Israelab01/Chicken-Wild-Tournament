@@ -1,0 +1,184 @@
+/* styles.css */
+body {
+    font-family: 'Luckiest Guy';
+    margin: 0;
+    padding: 0;
+    background-image: url("Chicken365/Images/background/FondoPC.png");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .game-container {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 1px #000;
+    text-align: center; 
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    -webkit-text-stroke: 0.1px black;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .player {
+    width: 30%;
+  }
+  
+  .player h2 {
+    margin: 10px 0;
+  }
+  
+  .chicken, .egg {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .vs {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  footer {
+    text-align: center;
+  }
+  
+  .ranking img {
+    width: 40px;
+    margin: 0 5px;
+  }
+  
+  .buttons {
+    margin-top: 10px;
+  }
+  
+  button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #ffaa00;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .close-modal {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#playerList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#playerList li {
+    margin: 5px 0;
+}
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    main {
+      flex-direction: column;
+    }
+  
+    .player {
+      width: 80%;
+    }
+  
+    .vs {
+      margin: 20px 0;
+    }
+  
+    .buttons button {
+      width: 80%;
+    }
+  }
+  

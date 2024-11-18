@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chicken Wild Tournament</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap">
+  <link rel="stylesheet" href="juegoStyle.css">
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>ROUND 1</h1>
+      <button class="menu-btn">☰</button>
+    </header>
+    <main>
+      <div class="player player-left">
+        <h2></h2>
+        <img src="Chicken365/Images/avatares/Avatar1.png" alt="Gallina Pablo" class="chicken">
+        <!--<img src="Chicken365/Images/huevos/" alt="Huevo Verde" class="egg">-->
+      </div>
+      <div class="vs">VS</div>
+      <div class="player player-right">
+        <h2></h2>
+        <img src="Chicken365/Images/avatares/Avatar2.png" alt="Gallina Juan" class="chicken">
+        <!--<img src="huevo-dorado.png" alt="Huevo Dorado" class="egg">-->
+      </div>
+    </main>
+    <footer>
+      <p>Gerarquía ascendente:</p>
+      <div class="ranking">
+        <img src="Chicken365/Images/huevos/huevoMadera.png" alt="Icono 1">
+        <img src="Chicken365/Images/huevos/huevoBronce.png" alt="Icono 2">
+        <img src="Chicken365/Images/huevos/huevoPlata.png" alt="Icono 3">
+        <img src="Chicken365/Images/huevos/huevoOro.png" alt="Icono 4">
+        <img src="Chicken365/Images/huevos/huevoEsmeralda.png" alt="Icono 5">
+        <img src="Chicken365/Images/huevos/huevoDiamante.png" alt="Icono 6">
+      </div>
+      <div id="resultado"></div>
+      <div class="buttons">
+        <button id="start-btn">Iniciar</button>
+        <button id="btnPlayerList">Jugadores</button>
+        <button id="bracket-btn">Bracket</button>
+      </div>
+      <div id="playerListModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Jugadores</h2>
+            <ul id="playerList">
+                <!-- Aquí se cargará la lista de jugadores -->
+            </ul>
+        </div>
+    </div>
+    </footer>
+    <!-- Modal Jugadores -->
+    <div class="modal" id="players-modal">
+      <div class="modal-content">
+        <h3>Jugadores</h3>
+        <ul>
+          <li>Israel</li>
+          <li>Juan</li>
+          <li>Nicolas</li>
+          <li>Felipe</li>
+          <li>Fernando</li>
+        </ul>
+        <button class="close-modal">Cerrar</button>
+      </div>
+    </div>
+    <!-- Modal Bracket -->
+    <div class="modal" id="bracket-modal">
+      <div class="modal-content">
+        <h3>Bracket</h3>
+        <img src="bracket-diagrama.png" alt="Bracket">
+        <button class="close-modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+  <script src="mainjuego.js"></script>
+</body>
+</html>
+
+
+
+
+
+
