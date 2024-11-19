@@ -6,6 +6,7 @@
   <title>Chicken Wild Tournament</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap">
   <link rel="stylesheet" href="styleJuego.css">
+  <link rel="stylesheet" href="stylePopup.css"/>
 </head>
 <body>
   <div class="game-container">
@@ -14,11 +15,11 @@
       <button class="menu-btn" onclick="openPopup()">☰</button>
       <div id="popup" class="popup hidden">
         <div class="popup-content">
-            <span class="close-icon" onclick="closePopup()">×</span>
+            <span class="close-icon" onclick="closePopup()">X</span>
             <h2 class="popup-title">Menu</h2>
             <div class="button-menu">
-              <h3 class="popup-button-reiniciar" onclick="location.reload()">Reiniciar</h3>
-              <h3 class="popup-button-salir" onclick="backToPresala()">Salir</h3>
+              <h3 class="popup-button-reiniciar" onclick="location.reload()">Reset</h3>
+              <h3 class="popup-button-salir"><a class="exit" href="presala.html">Exit</a></h3>
             </div>
         </div>
       </div>
@@ -48,49 +49,27 @@
       </div>
       <div id="resultado"></div>
       <div class="buttons">
-        <button id="start-btn" class="botonesImp">Iniciar</button>
-        <button id="btnPlayerList" class="botonesImp">Jugadores</button>
+        <button id="start-btn" class="botonesImp">Play</button>
+        <button id="btnPlayerList" class="botonesImp" onclick="openPlayerListModal()">Players</button>
         <button id="bracket-btn" class="botonesImp" onclick="openBracket()">Bracket</button>
       </div>
       <div id="bracket" class="popup hidden">
         <div class="popup-content">
-            <span class="close-icon" onclick="closeBracket()">×</span>
+            <span class="close-icon" onclick="closeBracket()">X</span>
         </div>
       </div>
-      <div id="playerListModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Jugadores</h2>
-            <ul id="playerList">
+      <div id="playerListModal" class="popup hidden">
+        <div class="popup-content-players">
+            <span class="close-icon" onclick="closePlayerListModal()">X</span>
+            <h2 class="popup-title">Players</h2>
+            <ul class="popup-playerList" id="playerList">
                 <!-- Aquí se cargará la lista de jugadores -->
             </ul>
         </div>
-    </div>
+      </div>
     </footer>
-    <!-- Modal Jugadores -->
-    <div class="modal" id="players-modal">
-      <div class="modal-content">
-        <h3>Jugadores</h3>
-        <ul>
-          <li>Israel</li>
-          <li>Juan</li>
-          <li>Nicolas</li>
-          <li>Felipe</li>
-          <li>Fernando</li>
-        </ul>
-        <button class="close-modal">Cerrar</button>
-      </div>
-    </div>
-    <!-- Modal Bracket -->
-    <div class="modal" id="bracket-modal">
-      <div class="modal-content">
-        <h3>Bracket</h3>
-        <img src="bracket-diagrama.png" alt="Bracket">
-        <button class="close-modal">Cerrar</button>
-      </div>
-    </div>
   </div>
-  <script src="mainjuego.js"></script>
+  <script src="main.js"></script>
 
 
   

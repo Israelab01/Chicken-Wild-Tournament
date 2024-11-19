@@ -46,6 +46,11 @@
         cursor: pointer;
         font-family: "Luckiest Guy", Arial, sans-serif;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    .boton:hover{
+        transform: scale(1.1);
     }
 
     .boton.small {
@@ -58,6 +63,10 @@
 
     .boton:hover {
         background-color: #ffd500;
+    }
+    .boton.boton.large a{
+        text-decoration: none;
+        color: black;
     }
 
     .modal {
@@ -97,6 +106,7 @@
     #playerList li {
         margin: 5px 0;
     }
+    
 }
 
 /* Media query para pantallas grandes (resolución de PC) */
@@ -145,12 +155,20 @@
         cursor: pointer;
         font-family: "Luckiest Guy", Arial, sans-serif;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+    }
+    .boton:hover{
+        background-color: #ffd500;
     }
 
     .boton.large {
         width: 300px;
         padding: 15px;
         font-size: 1.8em;
+    }
+    .boton.boton.large a{
+        text-decoration: none;
+        color: black;
     }
 
     .boton.small {

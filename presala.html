@@ -4,24 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Presala del Juego</title>
-    <link rel="stylesheet" href="stylePresala.css" />
+    <title>LOBBY</title>
+    <link rel="stylesheet" href="stylePresala.css"/>
+    <link rel="stylesheet" href="stylePopup.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" />
 </head>
 <body>
     <div class="presala">
-        <h1>PRESALA</h1>
+        <h1>LOBBY</h1>
     </div>
     <div class="botones">
-        <button class="boton large" id="btnNext">INICIAR</button>
-        <button class="boton small" id="btnAddPlayer">AÑADIR JUGADOR</button>
-        <button class="boton small" id="btnPlayerList">JUGADORES</button>
+        <a href="juego.html"><button class="boton large" id="btnNext">GAME</button></a>
+        <button class="boton small" id="btnAddPlayer">ADD PLAYERS</button>
+        <button class="boton small" id="btnPlayerList"  onclick="openPlayerListModal()">PLAYERS</button>
     </div>
-    <div id="playerListModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Jugadores</h2>
-            <ul id="playerList">
+    <div id="playerListModal" class="popup hidden">
+        <div class="popup-content-players">
+            <span class="close-icon" onclick="closePlayerListModal()">X</span>
+            <h2 class="popup-title">Players</h2>
+            <ul class="popup-playerList" id="playerList">
                 <!-- Aquí se cargará la lista de jugadores -->
             </ul>
         </div>

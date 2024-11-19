@@ -12,54 +12,21 @@ let jerarquiaHuevos = {
     "Diamante": 5
 };
 
-// Función para mostrar la lista de jugadores en el modal
-function mostrarListaJugadores() {
-    const playerList = document.getElementById("playerList");
-    playerList.innerHTML = "";  // Limpiar lista actual
-    listaJugadores.forEach(jugador => {
-        const li = document.createElement("li");
-        li.textContent = jugador;
-        playerList.appendChild(li);
-    });
-    document.getElementById("playerListModal").style.display = "flex";
+// Funcionalidad para cerrar modales
+function cerrarModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
 }
 
-// Eventos de los botones
-document.getElementById("btnPlayerList").addEventListener("click", mostrarListaJugadores);
-
-// Funcionalidad para el botón "Next"
-document.getElementById("btnNext").addEventListener("click", () => {
-    window.location.href = "juego.html";  // Redirige a la pantalla del juego (ajusta la URL según sea necesario)
-});
-
-// Funcionalidad para cerrar el modal
-document.querySelector(".close").addEventListener("click", () => {
-    document.getElementById("playerListModal").style.display = "none";
-});
-
-// Funcionalidad para cerrar el modal al hacer clic en la "x"
-document.querySelector(".close").addEventListener("click", () => {
-    document.getElementById("playerListModal").style.display = "none";
-});
-
-// Cerrar el modal al hacer clic fuera del contenido del modal
-window.addEventListener("click", (event) => {
-    const modal = document.getElementById("playerListModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-});
-
-//Asignar huevo aleatoriamente
+// Asignar huevo aleatoriamente
 function asignarHuevo() {
     let huevo = listaHuevos[Math.floor(Math.random() * listaHuevos.length)];
     return { nombre: huevo, nivel: jerarquiaHuevos[huevo] };
 }
 
-//lista de jugadores con un huevo asignado
+// Crear lista inicial de jugadores con huevos asignados
 let jugadores = listaJugadores.map(nombre => ({ nombre, huevo: asignarHuevo() }));
 
-//mezclar la lista de jugadores
+// Mezclar un array (Fisher-Yates)
 function mezclarArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -74,15 +41,14 @@ function combate(jugador1, jugador2) {
     } else if (jugador1.huevo.nivel < jugador2.huevo.nivel) {
         return jugador2;
     } else {
-        // En caso de empate, se elige un jugador aleatorio
-        return Math.random() < 0.5 ? jugador1 : jugador2;
+        return Math.random() < 0.5 ? jugador1 : jugador2; // Empate
     }
 }
 
-//Ejecutar el juego
+// Lógica principal del juego
 function jugar() {
-    let resultado = document.getElementById("resultado"); 
-    resultado.innerHTML = "";  // Limpiar resultados previos
+    let resultado = document.getElementById("resultado");
+    resultado.innerHTML = ""; // Limpiar resultados previos
     
     while (jugadores.length > 1) {
         let rondaTexto = "<h3>Nueva Ronda</h3><ul>";
@@ -95,19 +61,16 @@ function jugar() {
 
         mezclarArray(jugadores);
 
-        // Enfrentarse en pares
+        // Combates
         let supervivientes = [];
         for (let i = 0; i < jugadores.length; i += 2) {
             if (i + 1 < jugadores.length) {
-                // Mostrar el emparejamiento de cada combate
                 rondaTexto += `<li><strong>${jugadores[i].nombre} (huevo ${jugadores[i].huevo.nombre})</strong> 
                                vs <strong>${jugadores[i + 1].nombre} (huevo ${jugadores[i + 1].huevo.nombre})</strong></li>`;
-                
                 let ganador = combate(jugadores[i], jugadores[i + 1]);
                 rondaTexto += `<li>${ganador.nombre} gana el combate</li>`;
                 supervivientes.push(ganador);
             } else {
-                // Si hay un jugador sin contrincante, pasa automáticamente
                 rondaTexto += `<li>${jugadores[i].nombre} pasa automáticamente a la siguiente ronda</li>`;
                 supervivientes.push(jugadores[i]);
             }
@@ -116,17 +79,42 @@ function jugar() {
         rondaTexto += "</ul>";
         resultado.innerHTML += rondaTexto;
 
-        //Actualizar lista de jugadores para la próxima ronda
-        jugadores = supervivientes;
+        jugadores = supervivientes; // Actualizar jugadores
     }
 
-    //Mostrar el ganador final
     resultado.innerHTML += `<h2>El ganador final es ${jugadores[0].nombre} con el huevo ${jugadores[0].huevo.nombre}!</h2>`;
 }
 
-//Ejecutar el juego al hacer clic en el botón
-document.getElementById("botonJugar").addEventListener("click", () => {
-    //Reiniciar la lista de jugadores en cada ejecución
-    jugadores = listaJugadores.map(nombre => ({ nombre, huevo: asignarHuevo() }));
+document.getElementById("start-btn").addEventListener("click", () => {
+    jugadores = listaJugadores.map(nombre => ({ nombre, huevo: asignarHuevo() })); // Reiniciar jugadores
     jugar();
 });
+function openPopup() {
+    document.getElementById("popup").classList.remove("hidden");
+}
+
+function closePopup() {
+    document.getElementById("popup").classList.add("hidden");
+}
+function openBracket() {
+    document.getElementById("bracket").classList.remove("hidden");
+}
+function closeBracket() {
+    document.getElementById("bracket").classList.add("hidden");
+}
+// Abrir el modal de la lista de jugadores
+function openPlayerListModal() {
+    const playerList = document.getElementById("playerList");
+    playerList.innerHTML = "";
+    listaJugadores.forEach(jugador => {
+        const li = document.createElement("li");
+        li.textContent = jugador;
+        playerList.appendChild(li);
+    });
+
+    document.getElementById("playerListModal").classList.remove("hidden");
+}
+function closePlayerListModal() {
+    document.getElementById("playerListModal").classList.add("hidden");
+}
+
