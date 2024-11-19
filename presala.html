@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Presala del Juego</title>
+    <link rel="stylesheet" href="stylePresala.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" />
+</head>
+<body>
+    <div class="presala">
+        <h1>PRESALA</h1>
+    </div>
+    <div class="botones">
+        <button class="boton large" id="btnNext">INICIAR</button>
+        <button class="boton small" id="btnAddPlayer">AÑADIR JUGADOR</button>
+        <button class="boton small" id="btnPlayerList">JUGADORES</button>
+    </div>
+    <div id="playerListModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Jugadores</h2>
+            <ul id="playerList">
+                <!-- Aquí se cargará la lista de jugadores -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
