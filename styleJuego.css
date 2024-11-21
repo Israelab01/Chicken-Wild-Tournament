@@ -191,6 +191,7 @@ body {
 #playerList li {
     margin: 5px 0;
 }
+
   
   /* Media Queries */
   @media (max-width: 768px) {
