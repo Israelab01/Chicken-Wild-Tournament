@@ -192,7 +192,26 @@ body {
     margin: 5px 0;
 }
 
-  
+.ranking {
+  position: absolute; 
+  bottom: 10px; 
+  left: 10px; 
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  gap: 10px; 
+}
+
+.ranking img {
+  width: 50px; 
+  height: auto; 
+  transition: transform 0.3s; 
+}
+
+.ranking img:hover {
+  transform: scale(1.2); 
+}
+
   /* Media Queries */
   @media (max-width: 768px) {
     main {
