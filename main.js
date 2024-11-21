@@ -89,6 +89,11 @@ document.getElementById("start-btn").addEventListener("click", () => {
     jugadores = listaJugadores.map(nombre => ({ nombre, huevo: asignarHuevo() })); // Reiniciar jugadores
     jugar();
 });
+
+
+
+
+//popups
 function openPopup() {
     document.getElementById("popup").classList.remove("hidden");
 }
