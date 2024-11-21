@@ -1,5 +1,6 @@
 # Chicken Wild Tournament
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 [Web Preview]()cambiar
@@ -93,3 +94,5 @@ This approach ensures that Chicken365 remains engaging, fair, and scalable, crea
 
 This project is licensed under the MIT License.
 >>>>>>> main
+=======
+>>>>>>> f58561526141066b8724d2812efb95cd1cd8f334
