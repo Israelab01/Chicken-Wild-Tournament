@@ -1,19 +1,20 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const listaJugadores = [
-        "Alejandro", "Pablo Noria", "Javier", "Felipe", "Nando", "Mauricio",
-        "Pablo Jimenez", "Samuel", "Nicolás", "Israel", "Manolo",
-        "Rubén", "Jairo", "Adrián", "Judith", "Mario"
-    ];
+const listaJugadores = [
+    "Alejandro", "Pablo Noria", "Javier", "Felipe", "Nando", "Mauricio",
+    "Pablo Jimenez", "Samuel", "Nicolás", "Israel", "Manolo",
+    "Rubén", "Jairo", "Adrián", "Judith", "Mario"
+];
 
-    const listaHuevos = ["Madera", "Bronce", "Plata", "Oro", "Esmeralda", "Diamante"];
-    const jerarquiaHuevos = {
-        "Madera": 0,
-        "Bronce": 1,
-        "Plata": 2,
-        "Oro": 3,
-        "Esmeralda": 4,
-        "Diamante": 5
-    };
+const listaHuevos = ["Madera", "Bronce", "Plata", "Oro", "Esmeralda", "Diamante"];
+const jerarquiaHuevos = {
+    "Madera": 0,
+    "Bronce": 1,
+    "Plata": 2,
+    "Oro": 3,
+    "Esmeralda": 4,
+    "Diamante": 5
+};
+document.addEventListener('DOMContentLoaded', () => {
+   
 
     const listaPollos = Array.from({ length: 16 }, (_, i) => `Images/avatares/Avatar${i + 1}.png`);
     let ronda = 1;
