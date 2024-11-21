@@ -90,3 +90,4 @@ This approach ensures that Chicken365 remains engaging, fair, and scalable, crea
 ### License
 
 This project is licensed under the MIT License.
+# Chicken Wild Tournament
