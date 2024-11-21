@@ -212,6 +212,11 @@ body {
   transform: scale(1.2); 
 }
 
+.textoJerarquia {
+  text-align: left;
+  font-size: 14px; 
+}
+
   /* Media Queries */
   @media (max-width: 768px) {
     main {
