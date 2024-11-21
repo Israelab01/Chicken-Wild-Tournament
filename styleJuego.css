@@ -62,9 +62,17 @@ body {
   
   main {
     display: flex;
+    flex-direction: column; 
     justify-content: space-between;
     align-items: center;
     margin: 20px 0;
+  }
+  .players{
+    display: flex;
+    justify-content: space-between;
+  }
+  .player{
+    width: 100%;
   }
   
   .player {
@@ -191,6 +199,12 @@ body {
 #playerList li {
     margin: 5px 0;
 }
+
+  .ranking img { opacity: 0.2; transition: opacity 0.3s ease-in-out; }
+  .ranking img.visible { opacity: 1; }
+  .eliminado { color: red; font-size: 1.5em; text-align: center; margin: 10px 0; }
+
+
   
   /* Media Queries */
   @media (max-width: 768px) {

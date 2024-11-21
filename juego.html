@@ -1,83 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chicken Wild Tournament</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap">
-  <link rel="stylesheet" href="styleJuego.css">
-  <link rel="stylesheet" href="stylePopup.css"/>
-</head>
-<body>
-  <div class="game-container">
-    <header>
-      <h1 class="title">ROUND 1</h1>
-      <button class="menu-btn" onclick="openPopup()">☰</button>
-      <div id="popup" class="popup hidden">
-        <div class="popup-content">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chicken Wild Tournament</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+    />
+    <link rel="stylesheet" href="styleJuego.css" />
+    <link rel="stylesheet" href="stylePopup.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <header>
+        <h1 class="title" id="round-number">ROUND 1</h1>
+        <button class="menu-btn" onclick="openPopup()">☰</button>
+        <div id="popup" class="popup hidden">
+          <div class="popup-content">
             <span class="close-icon" onclick="closePopup()">X</span>
             <h2 class="popup-title">Menu</h2>
             <div class="button-menu">
-              <h3 class="popup-button-reiniciar" onclick="location.reload()">Reset</h3>
-              <h3 class="popup-button-salir"><a class="exit" href="presala.html">Exit</a></h3>
+              <h3 class="popup-button-reiniciar" onclick="location.reload()">
+                Reset
+              </h3>
+              <h3 class="popup-button-salir">
+                <a class="exit" href="presala.html">Exit</a>
+              </h3>
             </div>
+          </div>
         </div>
-      </div>
-    </header>
-    <main>
-      <div class="player player-left">
-        <h2></h2>
-        <img src="Images/avatares/Avatar1.png" alt="Gallina Pablo" class="chicken">
-        <!--<img src="Chicken365/Images/huevos/" alt="Huevo Verde" class="egg">-->
-      </div>
-      <div class="vs">VS</div>
-      <div class="player player-right">
-        <h2></h2>
-        <img src="Images/avatares/Avatar2.png" alt="Gallina Juan" class="chicken">
-        <!--<img src="huevo-dorado.png" alt="Huevo Dorado" class="egg">-->
-      </div>
-    </main>
-    <footer>
-      <p>Jerarquía ascendente:</p>
-      <div class="ranking">
-        <img src="Images/huevos/huevoMadera.png" alt="Icono 1">
-        <img src="Images/huevos/huevoBronce.png" alt="Icono 2">
-        <img src="Images/huevos/huevoPlata.png" alt="Icono 3">
-        <img src="Images/huevos/huevoOro.png" alt="Icono 4">
-        <img src="Images/huevos/huevoEsmeralda.png" alt="Icono 5">
-        <img src="Images/huevos/huevoDiamante.png" alt="Icono 6">
-      </div>
-      <div id="resultado"></div>
-      <div class="buttons">
-        <button id="start-btn" class="botonesImp">Play</button>
-        <button id="btnPlayerList" class="botonesImp" onclick="openPlayerListModal()">Players</button>
-        <button id="bracket-btn" class="botonesImp" onclick="openBracket()">Bracket</button>
-      </div>
-      <div id="bracket" class="popup hidden">
-        <div class="popup-content">
+      </header>
+      <main>
+        <div class="players">
+          <div class="player-left">
+            <h2></h2>
+            <img src="Images/avatares/Avatar1.png" alt="Avatar izquierda" />
+          </div>
+          <div class="player-right">
+            <h2></h2>
+            <img src="Images/avatares/Avatar2.png" alt="Avatar derecha" />
+          </div>
+        </div>
+        <div class="ranking">
+          <div class="contenedor-left">
+            <img
+              src="Images/huevos/huevoMadera.png"
+              alt="Madera"
+              class="hidden"
+            />
+            <img
+              src="Images/huevos/huevoBronce.png"
+              alt="Bronce"
+              class="hidden"
+            />
+            <img
+              src="Images/huevos/huevoPlata.png"
+              alt="Plata"
+              class="hidden"
+            />
+            <img src="Images/huevos/huevoOro.png" alt="Oro" class="hidden" />
+            <img
+              src="Images/huevos/huevoEsmeralda.png"
+              alt="Esmeralda"
+              class="hidden"
+            />
+            <img
+              src="Images/huevos/huevoDiamante.png"
+              alt="Diamante"
+              class="hidden"
+            />
+          </div>
+          <div class="contenedor-right">
+            <img
+              src="Images/huevos/huevoMadera.png"
+              alt="Madera"
+              class="hidden"
+            />
+            <img
+              src="Images/huevos/huevoBronce.png"
+              alt="Bronce"
+              class="hidden"
+            />
+            <img
+              src="Images/huevos/huevoPlata.png"
+              alt="Plata"
+              class="hidden"
+            />
+            <img src="Images/huevos/huevoOro.png" alt="Oro" class="hidden" />
+            <img
+              src="Images/huevos/huevoEsmeralda.png"
+              alt="Esmeralda"
+              class="hidden"
+            />
+            <img
+              src="Images/huevos/huevoDiamante.png"
+              alt="Diamante"
+              class="hidden"
+            />
+          </div>
+        </div>
+        <div class="ranking"></div>
+        <div id="resultado"></div>
+      </main>
+      <footer>
+        <div class="buttons">
+          <button id="start-btn" class="botonesImp">Play</button>
+          <button
+            id="btnPlayerList"
+            class="botonesImp"
+            onclick="openPlayerListModal()"
+          >
+            Players
+          </button>
+          <button id="bracket-btn" class="botonesImp" onclick="openBracket()">
+            Bracket
+          </button>
+        </div>
+        <div id="bracket" class="popup hidden">
+          <div class="popup-content">
             <span class="close-icon" onclick="closeBracket()">X</span>
+          </div>
         </div>
-      </div>
-      <div id="playerListModal" class="popup hidden">
-        <div class="popup-content-players">
+        <div id="playerListModal" class="popup hidden">
+          <div class="popup-content-players">
             <span class="close-icon" onclick="closePlayerListModal()">X</span>
             <h2 class="popup-title">Players</h2>
             <ul class="popup-playerList" id="playerList">
-                <!-- Aquí se cargará la lista de jugadores -->
+              <!-- Aquí se cargará la lista de jugadores -->
             </ul>
+          </div>
         </div>
-      </div>
-    </footer>
-  </div>
-  <script src="main.js"></script>
-
-
-  
-</body>
+      </footer>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
-
-
-
-
-
-
