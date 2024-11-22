@@ -32,90 +32,53 @@
         </div>
       </header>
       <main>
-        <div class="players">
-          <div class="player-left">
-            <h2></h2>
-            <img src="Images/avatares/Avatar1.png" alt="Avatar izquierda" />
-          </div>
-          <div class="player-right">
-            <h2></h2>
-            <img src="Images/avatares/Avatar2.png" alt="Avatar derecha" />
-          </div>
-        </div>
-        <div class="ranking">
-          <div class="contenedor-left">
-            <img
-              src="Images/huevos/huevoMadera.png"
-              alt="Madera"
-              class="hidden"
-            />
-            <img
-              src="Images/huevos/huevoBronce.png"
-              alt="Bronce"
-              class="hidden"
-            />
-            <img
-              src="Images/huevos/huevoPlata.png"
-              alt="Plata"
-              class="hidden"
-            />
-            <img src="Images/huevos/huevoOro.png" alt="Oro" class="hidden" />
-            <img
-              src="Images/huevos/huevoEsmeralda.png"
-              alt="Esmeralda"
-              class="hidden"
-            />
-            <img
-              src="Images/huevos/huevoDiamante.png"
-              alt="Diamante"
-              class="hidden"
-            />
-          </div>
-          <div class="contenedor-right">
-            <img
-              src="Images/huevos/huevoMadera.png"
-              alt="Madera"
-              class="hidden"
-            />
-            <img
-              src="Images/huevos/huevoBronce.png"
-              alt="Bronce"
-              class="hidden"
-            />
-            <img
-              src="Images/huevos/huevoPlata.png"
-              alt="Plata"
-              class="hidden"
-            />
-            <img src="Images/huevos/huevoOro.png" alt="Oro" class="hidden" />
-            <img
-              src="Images/huevos/huevoEsmeralda.png"
-              alt="Esmeralda"
-              class="hidden"
-            />
-            <img
-              src="Images/huevos/huevoDiamante.png"
-              alt="Diamante"
-              class="hidden"
-            />
+        <div class="container-players">
+          <div class="player-section">
+            <div class="player-left">
+              <h2></h2>
+              <img src="Images/avatares/Avatar1.png" alt="Avatar izquierda" />
+              <div class="contenedor-left">
+                <img src="Images/huevos/huevoMadera.png" alt="Madera" class="hidden" />
+                <img src="Images/huevos/huevoBronce.png" alt="Bronce" class="hidden" />
+                <img src="Images/huevos/huevoPlata.png" alt="Plata" class="hidden" />
+                <img src="Images/huevos/huevoOro.png" alt="Oro" class="hidden" />
+                <img src="Images/huevos/huevoEsmeralda.png" alt="Esmeralda" class="hidden" />
+                <img src="Images/huevos/huevoDiamante.png" alt="Diamante" class="hidden" />
+              </div>
+            </div>
+            <div class="middle-image">
+              <img src="Images/extras/Versus.png" alt="Versus" />
+              <div id="resultado"></div>
+              <div id="resultado"></div>
+              <div class="buttons">
+                <button id="start-btn" class="botonesImp">Play</button>
+                <button
+                  id="btnPlayerList"
+                  class="botonesImp"
+                  onclick="openPlayerListModal()"
+                >
+                  Players
+                </button>
+                <button id="bracket-btn" class="botonesImp" onclick="openBracket()">
+                  Bracket
+                </button>
+              </div>
+            </div>
+            <div class="player-right">
+              <h2></h2>
+              <img src="Images/avatares/Avatar2.png" alt="Avatar derecha" />
+              <div class="contenedor-right">
+                <img src="Images/huevos/huevoMadera.png" alt="Madera" class="hidden" />
+                <img src="Images/huevos/huevoBronce.png" alt="Bronce" class="hidden" />
+                <img src="Images/huevos/huevoPlata.png" alt="Plata" class="hidden" />
+                <img src="Images/huevos/huevoOro.png" alt="Oro" class="hidden" />
+                <img src="Images/huevos/huevoEsmeralda.png" alt="Esmeralda" class="hidden" />
+                <img src="Images/huevos/huevoDiamante.png" alt="Diamante" class="hidden" />
+              </div>
+            </div>
           </div>
         </div>
         <div class="ranking"></div>
-        <div id="resultado"></div>
-        <div id="resultado"></div>
-        <div class="buttons">
-          <button id="start-btn" class="botonesImp">Play</button>
-          <button
-            id="btnPlayerList"
-            class="botonesImp"
-            onclick="openPlayerListModal()"
-          >
-            Players
-          </button>
-          <button id="bracket-btn" class="botonesImp" onclick="openBracket()">
-            Bracket
-          </button>
-        </div>
         <div id="bracket" class="popup hidden">
           <div class="popup-content">
             <span class="close-icon" onclick="closeBracket()">X</span>
