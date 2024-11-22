@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function iniciarBatalla() {
         if (jugadoresRestantes.length <= 1) {
             const ganadorFinal = jugadoresRestantes[0];
-            resultadoDiv.innerHTML = `<h2>¡El ganador final es ${ganadorFinal.nombre} con el huevo ${ganadorFinal.huevo.nombre}!</h2>`;
+            resultadoDiv.innerHTML = `<h2>¡El ganador final es ${ganadorFinal.nombre}!</h2>`;
             playButton.disabled = true;
             return;
         }
