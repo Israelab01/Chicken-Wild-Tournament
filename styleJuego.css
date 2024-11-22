@@ -166,10 +166,6 @@ button:hover {
   width: 100%;
 }
 
-.player {
-  width: 30%;
-}
-
 .player h2 {
   margin: 10px 0;
 }
@@ -179,11 +175,6 @@ button:hover {
   max-width: 100%;
   height: auto;
 }
-
-footer {
-  text-align: center;
-}
-
 .ranking img {
   width: 40px;
   margin: 0 5px;
@@ -296,23 +287,4 @@ footer {
 .textoJerarquia {
   position: absolute;
   font-size: 14px;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  main {
-    flex-direction: column;
-  }
-
-  .player {
-    width: 80%;
-  }
-
-  .vs {
-    margin: 20px 0;
-  }
-
-  .buttons button {
-    width: 80%;
-  }
 }
