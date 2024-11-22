@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chicken Wild Tournament</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+    />
+    <link rel="stylesheet" href="styleJuego.css" />
+    <link rel="stylesheet" href="stylePopup.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <header>
+        <h1 class="title" id="round-number">ROUND 1</h1>
+        <button class="menu-btn" onclick="openPopup()">☰</button>
+        <div id="popup" class="popup hidden">
+          <div class="popup-content">
+            <span class="close-icon" onclick="closePopup()">X</span>
+            <h2 class="popup-title">Menu</h2>
+            <div class="button-menu">
+              <h3 class="popup-button-reiniciar" onclick="location.reload()">
+                Reset
+              </h3>
+              <h3 class="popup-button-salir">
+                <a class="exit" href="presala.html">Exit</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="container-players">
+          <div class="player-section">
+            <div class="player-left">
+              <h2></h2>
+              <img src="Images/avatares/Avatar1.png" alt="Avatar izquierda" />
+              <div class="contenedor-left">
+                <img src="Images/huevos/huevoMadera.png" alt="Madera" class="hidden" />
+                <img src="Images/huevos/huevoBronce.png" alt="Bronce" class="hidden" />
+                <img src="Images/huevos/huevoPlata.png" alt="Plata" class="hidden" />
+                <img src="Images/huevos/huevoOro.png" alt="Oro" class="hidden" />
+                <img src="Images/huevos/huevoEsmeralda.png" alt="Esmeralda" class="hidden" />
+                <img src="Images/huevos/huevoDiamante.png" alt="Diamante" class="hidden" />
+              </div>
+            </div>
+            <div class="middle-image">
+              <img src="Images/extras/Versus.png" alt="Versus" />
+              <div id="resultado"></div>
+              <div id="resultado"></div>
+              <div class="buttons">
+                <button id="start-btn" class="botonesImp">Play</button>
+                <button
+                  id="btnPlayerList"
+                  class="botonesImp"
+                  onclick="openPlayerListModal()"
+                >
+                  Players
+                </button>
+                <button id="bracket-btn" class="botonesImp" onclick="openBracket()">
+                  Bracket
+                </button>
+              </div>
+            </div>
+            <div class="player-right">
+              <h2></h2>
+              <img src="Images/avatares/Avatar2.png" alt="Avatar derecha" />
+              <div class="contenedor-right">
+                <img src="Images/huevos/huevoMadera.png" alt="Madera" class="hidden" />
+                <img src="Images/huevos/huevoBronce.png" alt="Bronce" class="hidden" />
+                <img src="Images/huevos/huevoPlata.png" alt="Plata" class="hidden" />
+                <img src="Images/huevos/huevoOro.png" alt="Oro" class="hidden" />
+                <img src="Images/huevos/huevoEsmeralda.png" alt="Esmeralda" class="hidden" />
+                <img src="Images/huevos/huevoDiamante.png" alt="Diamante" class="hidden" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ranking"></div>
+        <div id="bracket" class="popup hidden">
+          <div class="popup-content">
+            <span class="close-icon" onclick="closeBracket()">X</span>
+          </div>
+        </div>
+        <div id="playerListModal" class="popup hidden">
+          <div class="popup-content-players">
+            <span class="close-icon" onclick="closePlayerListModal()">X</span>
+            <h2 class="popup-title">Players</h2>
+            <ul class="popup-playerList" id="playerList">
+              <!-- Aquí se cargará la lista de jugadores -->
+            </ul>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p class="textoJerarquia">Ascending hierarchy:</p>
+        <div class="hierarchy">
+          <img src="Images/huevos/huevoMadera.png" alt="Huevo_de_madera" />
+          <img src="Images/huevos/huevoBronce.png" alt="Huevo_de_bronce" />
+          <img src="Images/huevos/huevoPlata.png" alt="Huevo_de_plata" />
+          <img src="Images/huevos/huevoOro.png" alt="Huevo_de_oro" />
+          <img
+            src="Images/huevos/huevoEsmeralda.png"
+            alt="Huevo_de_esmeralda"
+          />
+          <img src="Images/huevos/huevoDiamante.png" alt="Huevo_de_diamante" />
+        </div>
+      </footer>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
