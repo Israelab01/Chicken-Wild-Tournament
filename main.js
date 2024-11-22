@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     shuffle(listaJugadores);
 
     const listaPollos = Array.from({ length: 16 }, (_, i) => `Images/avatares/Avatar${i + 1}.png`);
-    let ronda = 1;
+    let ronda = "ROUND OF 16";
 
     let jugadores = listaJugadores.map((nombre, index) => ({
         nombre,
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const jugador1 = jugadoresRestantes.shift();
         const jugador2 = jugadoresRestantes.shift();
 
-        roundDisplay.textContent = `Round ${ronda}`;
+        roundDisplay.textContent = `${ronda}`;
         actualizarJugadoresVisual(jugador1, jugador2);
 
         iniciarAnimacionHuevos(jugador1, jugador2, (huevoGanador1, huevoGanador2) => {
@@ -87,7 +87,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (jugadoresRestantes.length === 0) {
                         jugadoresRestantes = [...enEspera];
                         enEspera = [];
-                        ronda++;
+                        
+                        const numero = 2;
+
+                        switch (ronda) {
+                            case "ROUND OF 16":
+                                ronda = "QUARTER FINALS";
+                                break;
+                            case "QUARTER FINALS":
+                                ronda = "SEMIFINAL";                                break;
+                            case "SEMIFINAL":
+                                ronda = "FINAL";                                break;
+                            default:
+                                console.log("ERROR");
+                        }
+
                     }
 
                     playButton.disabled = false;
