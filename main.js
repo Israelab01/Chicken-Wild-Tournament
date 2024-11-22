@@ -13,8 +13,16 @@ const jerarquiaHuevos = {
     "Esmeralda": 4,
     "Diamante": 5
 };
+
 document.addEventListener('DOMContentLoaded', () => {
-   
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    shuffle(listaJugadores);
 
     const listaPollos = Array.from({ length: 16 }, (_, i) => `Images/avatares/Avatar${i + 1}.png`);
     let ronda = 1;
@@ -42,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultadoDiv = document.getElementById('resultado');
     const playButton = document.getElementById('start-btn');
 
-    // Actualizar los nombres y avatares para la batalla
     function actualizarJugadoresVisual(jugador1, jugador2) {
         playerLeftName.textContent = jugador1.nombre;
         playerRightName.textContent = jugador2.nombre;
@@ -50,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
         playerRightAvatar.src = jugador2.pollo;
     }
 
-    // Control de cada batalla
     function iniciarBatalla() {
         if (jugadoresRestantes.length <= 1) {
             const ganadorFinal = jugadoresRestantes[0];
@@ -66,25 +72,30 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarJugadoresVisual(jugador1, jugador2);
 
         iniciarAnimacionHuevos(jugador1, jugador2, (huevoGanador1, huevoGanador2) => {
-            const ganador = determinarGanador(jugador1, jugador2, huevoGanador1, huevoGanador2);
-            const perdedor = ganador === jugador1 ? jugador2 : jugador1;
-
-            mostrarEliminacion(perdedor, () => {
-                enEspera.push(ganador);
-                eliminados.push(perdedor);
-
-                if (jugadoresRestantes.length === 0) {
-                    jugadoresRestantes = [...enEspera];
-                    enEspera = [];
-                    ronda++;
-                }
-
+            if (huevoGanador1 === huevoGanador2) {
+                // Si los huevos son iguales, repetir la jugada
+                jugadoresRestantes.unshift(jugador1, jugador2);
                 playButton.disabled = false;
-            });
+            } else {
+                const ganador = determinarGanador(jugador1, jugador2, huevoGanador1, huevoGanador2);
+                const perdedor = ganador === jugador1 ? jugador2 : jugador1;
+
+                setTimeout(() => mostrarEliminacion(perdedor, () => {
+                    enEspera.push(ganador);
+                    eliminados.push(perdedor);
+
+                    if (jugadoresRestantes.length === 0) {
+                        jugadoresRestantes = [...enEspera];
+                        enEspera = [];
+                        ronda++;
+                    }
+
+                    playButton.disabled = false;
+                }), 1000);
+            }
         });
     }
 
-    // Animación de huevos para ambos jugadores
     function iniciarAnimacionHuevos(jugador1, jugador2, callback) {
         const huevosJugador1 = document.querySelectorAll('.contenedor-left img');
         const huevosJugador2 = document.querySelectorAll('.contenedor-right img');
@@ -128,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Determinar el ganador comparando los rangos de los huevos
     function determinarGanador(jugador1, jugador2, huevo1, huevo2) {
         const nivel1 = jerarquiaHuevos[huevo1];
         const nivel2 = jerarquiaHuevos[huevo2];
@@ -136,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return nivel1 > nivel2 ? jugador1 : jugador2;
     }
 
-    // Mostrar eliminación y esperar acción
     function mostrarEliminacion(jugadorEliminado, callback) {
         const mensaje = document.createElement('div');
         mensaje.classList.add('eliminado');
@@ -147,22 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             resultadoDiv.removeChild(mensaje);
             callback();
-        }, 4000);
+        }, 2000);
     }
 
-    // Comenzar juego
     playButton.addEventListener('click', () => {
         playButton.disabled = true;
         iniciarBatalla();
     });
 });
-
-
-    // Reiniciar y comenzar el juego
-    document.getElementById('start-btn').addEventListener('click', () => {
-        jugadores = listaJugadores.map(nombre => ({ nombre, huevo: asignarHuevo() }));
-        jugarRonda();
-    });
 
 function openPopup() {
     document.getElementById("popup").classList.remove("hidden");
@@ -171,13 +172,15 @@ function openPopup() {
 function closePopup() {
     document.getElementById("popup").classList.add("hidden");
 }
+
 function openBracket() {
     document.getElementById("bracket").classList.remove("hidden");
 }
+
 function closeBracket() {
     document.getElementById("bracket").classList.add("hidden");
 }
-// Abrir el modal de la lista de jugadores
+
 function openPlayerListModal() {
     const playerList = document.getElementById("playerList");
     playerList.innerHTML = "";
@@ -189,6 +192,7 @@ function openPlayerListModal() {
 
     document.getElementById("playerListModal").classList.remove("hidden");
 }
+
 function closePlayerListModal() {
     document.getElementById("playerListModal").classList.add("hidden");
 }
