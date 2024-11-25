@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     shuffle(listaJugadores);
 
     const listaPollos = Array.from({ length: 16 }, (_, i) => `Images/avatares/Avatar${i + 1}.png`);
-    let ronda = "ROUND OF 16";
+    let round = "ROUND OF 16";
+    let fight = 1;
 
     let jugadores = listaJugadores.map((nombre, index) => ({
         nombre,
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const playerLeftAvatar = document.querySelector('.player-left img');
     const playerRightAvatar = document.querySelector('.player-right img');
     const roundDisplay = document.getElementById('round-number');
+    const fightDisplay = document.getElementById('fight-number');
     const resultadoDiv = document.getElementById('resultado');
     const playButton = document.getElementById('start-btn');
 
@@ -57,7 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
         playerRightAvatar.src = jugador2.pollo;
     }
 
+    
     function iniciarBatalla() {
+
         if (jugadoresRestantes.length <= 1) {
             const ganadorFinal = jugadoresRestantes[0];
             resultadoDiv.innerHTML = `<h2>¡El ganador final es ${ganadorFinal.nombre}!</h2>`;
@@ -68,17 +72,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const jugador1 = jugadoresRestantes.shift();
         const jugador2 = jugadoresRestantes.shift();
 
-        roundDisplay.textContent = `${ronda}`;
+        roundDisplay.textContent = `${round}`;
+        if(round != "FINAL"){
+            fightDisplay.textContent = `FIGHT ${fight}`;
+        }
         actualizarJugadoresVisual(jugador1, jugador2);
-
         iniciarAnimacionHuevos(jugador1, jugador2, (huevoGanador1, huevoGanador2) => {
             if (huevoGanador1 === huevoGanador2) {
                 // Si los huevos son iguales, repetir la jugada
                 jugadoresRestantes.unshift(jugador1, jugador2);
-                playButton.disabled = false;
+                setTimeout(() => iniciarBatalla(), 1000);
             } else {
                 const ganador = determinarGanador(jugador1, jugador2, huevoGanador1, huevoGanador2);
                 const perdedor = ganador === jugador1 ? jugador2 : jugador1;
+                fight++;
 
                 setTimeout(() => mostrarEliminacion(perdedor, () => {
                     enEspera.push(ganador);
@@ -90,16 +97,22 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         const numero = 2;
 
-                        switch (ronda) {
+                        switch (round) {
                             case "ROUND OF 16":
-                                ronda = "QUARTER FINALS";
+                                round = "QUARTER FINALS";
+                                fight = 1;
                                 break;
                             case "QUARTER FINALS":
-                                ronda = "SEMIFINAL";                                
-                                break;
+                                round = "SEMIFINAL";
+                                fight = 1;
+                                break;                              
                             case "SEMIFINAL":
-                                ronda = "FINAL";                                
-                                break;
+                                round = "FINAL"; 
+                                fight = 1;
+                                break;    
+                            case "FINAL":
+                                fightDisplay.textContent = ``;
+                                break;                             
                             default:
                                 console.log("ERROR");
                         }
@@ -107,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                     playButton.disabled = false;
-                }), 1000);
+                }), 50);
             }
         });
     }
@@ -172,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             resultadoDiv.removeChild(mensaje);
             callback();
-        }, 2000);
+        }, 50);
     }
 
     playButton.addEventListener('click', () => {
