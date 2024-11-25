@@ -1,42 +1,43 @@
 /* styles.css */
 body {
-  font-family: "Luckiest Guy";
-  margin: 0;
-  padding: 0;
-  background-image: url("Images/background/FondoPC.png");
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow-x: hidden;
-}
-
-.game-container {
-  padding: 10px;
-  width: 100%;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
-  padding: 0 20px;
-}
-
-.menu-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-}
+    font-family: 'Luckiest Guy';
+    margin: 0;
+    padding: 0;
+    background-image: url("Images/background/FondoPC.png");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    
+  }
+  
+  .game-container {
+    padding: 10px;
+    width: 100%;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;         
+    height: 100px;                 
+    padding: 0 20px;
+  }
+  
+  .menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
 
 /* Estilo de los botones */
 .button-menu {
