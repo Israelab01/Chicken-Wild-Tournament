@@ -1,12 +1,3 @@
-@font-face {
-    font-family: 'ka1';
-    src: url('fonts/ka1.ttf') format('truetype');
-  }
-  
-  body {
-    font-family: 'ka1', sans-serif; /* Aplica la fuente */
-  }
-  
 @media (max-width: 480px) {
     .popup {
         position: fixed;
