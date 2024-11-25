@@ -1,9 +1,4 @@
-const listaJugadores = [
-    "Alejandro", "Pablo Noria", "Javier", "Felipe", "Nando", "Mauricio",
-    "Pablo Jimenez", "Samuel", "Nicolás", "Israel", "Manolo",
-    "Rubén", "Jairo", "Adrián", "Judith", "Mario"
-];
-
+const listaJugadores = JSON.parse(localStorage.getItem("listaJugadores")) || [];
 const listaHuevos = ["Madera", "Bronce", "Plata", "Oro", "Esmeralda", "Diamante"];
 const jerarquiaHuevos = {
     "Madera": 0,
@@ -25,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     shuffle(listaJugadores);
 
     const listaPollos = Array.from({ length: 16 }, (_, i) => `Images/avatares/Avatar${i + 1}.png`);
-    let ronda = 1;
+    let round = "ROUND OF 16";
+    let fight = 1;
 
     let jugadores = listaJugadores.map((nombre, index) => ({
         nombre,
@@ -47,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const playerLeftAvatar = document.querySelector('.player-left img');
     const playerRightAvatar = document.querySelector('.player-right img');
     const roundDisplay = document.getElementById('round-number');
+    const fightDisplay = document.getElementById('fight-number');
     const resultadoDiv = document.getElementById('resultado');
     const playButton = document.getElementById('start-btn');
 
@@ -57,10 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
         playerRightAvatar.src = jugador2.pollo;
     }
 
+    
     function iniciarBatalla() {
+
         if (jugadoresRestantes.length <= 1) {
             const ganadorFinal = jugadoresRestantes[0];
-            resultadoDiv.innerHTML = `<h2>¡El ganador final es ${ganadorFinal.nombre} con el huevo ${ganadorFinal.huevo.nombre}!</h2>`;
+            resultadoDiv.innerHTML = `<h2>¡El ganador final es ${ganadorFinal.nombre}!</h2>`;
             playButton.disabled = true;
             return;
         }
@@ -68,17 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const jugador1 = jugadoresRestantes.shift();
         const jugador2 = jugadoresRestantes.shift();
 
-        roundDisplay.textContent = `Round ${ronda}`;
+        roundDisplay.textContent = `${round}`;
+        if(round != "FINAL"){
+            fightDisplay.textContent = `FIGHT ${fight}`;
+        }
         actualizarJugadoresVisual(jugador1, jugador2);
-
         iniciarAnimacionHuevos(jugador1, jugador2, (huevoGanador1, huevoGanador2) => {
             if (huevoGanador1 === huevoGanador2) {
                 // Si los huevos son iguales, repetir la jugada
                 jugadoresRestantes.unshift(jugador1, jugador2);
-                playButton.disabled = false;
+                setTimeout(() => iniciarBatalla(), 1000);
             } else {
                 const ganador = determinarGanador(jugador1, jugador2, huevoGanador1, huevoGanador2);
                 const perdedor = ganador === jugador1 ? jugador2 : jugador1;
+                fight++;
 
                 setTimeout(() => mostrarEliminacion(perdedor, () => {
                     enEspera.push(ganador);
@@ -87,11 +89,33 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (jugadoresRestantes.length === 0) {
                         jugadoresRestantes = [...enEspera];
                         enEspera = [];
-                        ronda++;
+                        
+                        const numero = 2;
+
+                        switch (round) {
+                            case "ROUND OF 16":
+                                round = "QUARTER FINALS";
+                                fight = 1;
+                                break;
+                            case "QUARTER FINALS":
+                                round = "SEMIFINAL";
+                                fight = 1;
+                                break;                              
+                            case "SEMIFINAL":
+                                round = "FINAL"; 
+                                fight = 1;
+                                break;    
+                            case "FINAL":
+                                fightDisplay.textContent = ``;
+                                break;                             
+                            default:
+                                console.log("ERROR");
+                        }
+
                     }
 
                     playButton.disabled = false;
-                }), 1000);
+                }), 50);
             }
         });
     }
@@ -156,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             resultadoDiv.removeChild(mensaje);
             callback();
-        }, 2000);
+        }, 50);
     }
 
     playButton.addEventListener('click', () => {
@@ -196,4 +220,37 @@ function openPlayerListModal() {
 function closePlayerListModal() {
     document.getElementById("playerListModal").classList.add("hidden");
 }
+
+// Función para manejar la inclinación dinámica
+function addHoverEffect(card) {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left; // Coordenada X relativa al div
+      const y = e.clientY - rect.top;  // Coordenada Y relativa al div
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Calcula la rotación según la posición del cursor
+      const rotateX = ((y - centerY) / centerY) * 25; // Inclinación vertical
+      const rotateY = ((centerX - x) / centerX) * 25; // Inclinación horizontal
+
+      // Aplica la transformación
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      card.classList.add('active');
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      card.classList.remove('active');
+    });
+  }
+
+  // Aplica la función a las dos clases distintas
+  const card1 = document.querySelector('.player-left');
+  const card2 = document.querySelector('.player-right');
+
+  addHoverEffect(card1);
+  addHoverEffect(card2);
+
 
