@@ -18,8 +18,8 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
   }
   .player-left img, .player-right img{
-    width: 230px;
-    height: 250px;
+    width: 200px;
+    height: 220px;
   }
   .contenedor-left img, .contenedor-right img{
     width: 150px;

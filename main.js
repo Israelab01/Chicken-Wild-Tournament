@@ -237,8 +237,8 @@ function addHoverEffect(card) {
       const centerY = rect.height / 2;
 
       // Calcula la rotación según la posición del cursor
-      const rotateX = ((y - centerY) / centerY) * 20; // Inclinación vertical
-      const rotateY = ((centerX - x) / centerX) * 20; // Inclinación horizontal
+      const rotateX = ((y - centerY) / centerY) * 25; // Inclinación vertical
+      const rotateY = ((centerX - x) / centerX) * 25; // Inclinación horizontal
 
       // Aplica la transformación
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
