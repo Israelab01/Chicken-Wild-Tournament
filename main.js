@@ -1,9 +1,4 @@
-const listaJugadores = [
-    "Alejandro", "Pablo Noria", "Javier", "Felipe", "Nando", "Mauricio",
-    "Pablo Jimenez", "Samuel", "Nicolás", "Israel", "Manolo",
-    "Rubén", "Jairo", "Adrián", "Judith", "Mario"
-];
-
+const listaJugadores = JSON.parse(localStorage.getItem("listaJugadores")) || [];
 const listaHuevos = ["Madera", "Bronce", "Plata", "Oro", "Esmeralda", "Diamante"];
 const jerarquiaHuevos = {
     "Madera": 0,
