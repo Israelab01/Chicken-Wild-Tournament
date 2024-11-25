@@ -197,3 +197,36 @@ function closePlayerListModal() {
     document.getElementById("playerListModal").classList.add("hidden");
 }
 
+// Función para manejar la inclinación dinámica
+function addHoverEffect(card) {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left; // Coordenada X relativa al div
+      const y = e.clientY - rect.top;  // Coordenada Y relativa al div
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Calcula la rotación según la posición del cursor
+      const rotateX = ((y - centerY) / centerY) * 20; // Inclinación vertical
+      const rotateY = ((centerX - x) / centerX) * 20; // Inclinación horizontal
+
+      // Aplica la transformación
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      card.classList.add('active');
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      card.classList.remove('active');
+    });
+  }
+
+  // Aplica la función a las dos clases distintas
+  const card1 = document.querySelector('.player-left');
+  const card2 = document.querySelector('.player-right');
+
+  addHoverEffect(card1);
+  addHoverEffect(card2);
+
+

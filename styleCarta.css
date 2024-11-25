@@ -1,0 +1,31 @@
+.player-left, .player-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    height: 600px;
+    background-color: red;
+    border: 4px solid yellow;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    position: relative;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+  }
+  .active {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  }
+  .player-left img, .player-right img{
+    width: 230px;
+    height: 250px;
+  }
+  .contenedor-left img, .contenedor-right img{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .contenedor-left img.visible, .contenedor-right img.visible{
+    opacity: 1;
+  }

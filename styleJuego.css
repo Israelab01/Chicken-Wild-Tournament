@@ -81,16 +81,6 @@ main {
   width: 100%;
 }
 
-.player-left, .player-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%;
-}
-.player-left img, .player-right img{
-  width: 230px;
-  height: 250px;
-}
 .middle-image {
   display: flex;
   flex-direction: column;
@@ -146,17 +136,6 @@ button:hover {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-}
-.contenedor-left img, .contenedor-right img{
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  opacity: 0;
-  pointer-events: none;
-}
-.contenedor-left img.visible, .contenedor-right img.visible{
-  opacity: 1;
 }
 .players {
   display: flex;
