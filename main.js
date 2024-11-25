@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const huevosJugador2 = document.querySelectorAll('.contenedor-right img');
 
         let currentIndex1 = 0;
-        let currentIndex2 = 0;
+        let currentIndex2 = 0; //esto q es
 
         const mostrarAnimacionHuevos = (huevos, callbackAnimacion) => {
             huevos.forEach(huevo => huevo.classList.remove('visible'));
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             resultadoDiv.removeChild(mensaje);
             callback();
-        }, 50);
+        }, 2000);
     }
 
     playButton.addEventListener('click', () => {
@@ -204,7 +204,7 @@ function openBracket() {
 function closeBracket() {
     document.getElementById("bracket").classList.add("hidden");
 }
-
+//VER ESTO EN CONJUNTO
 function openPlayerListModal() {
     const playerList = document.getElementById("playerList");
     playerList.innerHTML = "";
@@ -212,6 +212,8 @@ function openPlayerListModal() {
         const li = document.createElement("li");
         li.textContent = jugador;
         playerList.appendChild(li);
+        li.style.textDecoration = "line-through";
+        // li.style.color = "";
     });
 
     document.getElementById("playerListModal").classList.remove("hidden");
