@@ -127,7 +127,8 @@ button:hover {
   background-color: #ffaa00;
 }
 
-.contenedor-left, .contenedor-right {
+.contenedor-left,
+.contenedor-right {
   position: relative;
   width: 200px;
   height: 200px;
