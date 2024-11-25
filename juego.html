@@ -10,11 +10,13 @@
     />
     <link rel="stylesheet" href="styleJuego.css" />
     <link rel="stylesheet" href="stylePopup.css" />
+    <link rel="stylesheet" href="styleCarta.css" />
   </head>
   <body>
     <div class="game-container">
       <header>
         <h1 class="title" id="round-number">CW TOURNAMENT</h1>
+        <h3 class="fights" id="fight-number"></h3>
         <button class="menu-btn" onclick="openPopup()">☰</button>
         <div id="popup" class="popup hidden">
           <div class="popup-content">
@@ -89,7 +91,6 @@
             <span class="close-icon" onclick="closePlayerListModal()">X</span>
             <h2 class="popup-title">Players</h2>
             <ul class="popup-playerList" id="playerList">
-              <!-- Aquí se cargará la lista de jugadores -->
             </ul>
           </div>
         </div>
