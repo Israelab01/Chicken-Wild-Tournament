@@ -95,9 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ronda = "QUARTER FINALS";
                                 break;
                             case "QUARTER FINALS":
-                                ronda = "SEMIFINAL";                                break;
+                                ronda = "SEMIFINAL";                                
+                                break;
                             case "SEMIFINAL":
-                                ronda = "FINAL";                                break;
+                                ronda = "FINAL";                                
+                                break;
                             default:
                                 console.log("ERROR");
                         }
