@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'ka1';
+  src: url('fonts/ka1.ttf') format('truetype');
+}
+
+body {
+  font-family: 'ka1', sans-serif; /* Aplica la fuente */
+}
+
 .player-left, .player-right {
     display: flex;
     flex-direction: column;

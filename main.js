@@ -70,6 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
         roundDisplay.textContent = `${round}`;
         if(round != "FINAL"){
             fightDisplay.textContent = `FIGHT ${fight}`;
+        } else { 
+            fightDisplay.textContent = ``;
         }
         actualizarJugadoresVisual(jugador1, jugador2);
         iniciarAnimacionHuevos(jugador1, jugador2, (huevoGanador1, huevoGanador2) => {
@@ -104,10 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             case "SEMIFINAL":
                                 round = "FINAL"; 
                                 fight = 1;
-                                break;    
-                            case "FINAL":
-                                fightDisplay.textContent = ``;
-                                break;                             
+                                break;                                 
                             default:
                                 console.log("ERROR");
                         }

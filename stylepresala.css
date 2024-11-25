@@ -1,4 +1,12 @@
 /* Estilos generales para dispositivos móviles */
+@font-face {
+    font-family: 'ka1';
+    src: url('fonts/ka1.ttf') format('truetype');
+  }
+  
+  body {
+    font-family: 'ka1', sans-serif; /* Aplica la fuente */
+  }
 @media (max-width: 480px) {
     body {
         margin: 0;
@@ -11,7 +19,7 @@
         background-size: 300px 800px;
         background-repeat: no-repeat;
         background-position: center;
-        font-family: "Luckiest Guy", Arial, sans-serif;
+        font-family: "ka1";
         overflow-x: hidden;
     }
 
@@ -44,7 +52,7 @@
         border: 3px solid black;
         border-radius: 10px;
         cursor: pointer;
-        font-family: "Luckiest Guy", Arial, sans-serif;
+        font-family: "ka1";
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         transition: transform 0.2s ease;
     }
@@ -129,7 +137,7 @@
         margin: 0;
         padding: 0;
         height: 100vh;
-        font-family: "Luckiest Guy", Arial, sans-serif;
+        font-family: "ka1";
         overflow-x: hidden;
     }
 
@@ -162,7 +170,7 @@
         border: 3px solid black;
         border-radius: 10px;
         cursor: pointer;
-        font-family: "Luckiest Guy", Arial, sans-serif;
+        font-family: "ka1";
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     .boton:hover {
@@ -262,7 +270,7 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
     padding: 10px 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
-    font-family: Arial, sans-serif;
+    font-family: "ka1";
     font-weight: bold;
 }
 #btnClearPlayers {
@@ -271,7 +279,7 @@
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
-    font-family: "Luckiest Guy", Arial, sans-serif;
+    font-family: "ka1";
     cursor: pointer;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

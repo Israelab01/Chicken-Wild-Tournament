@@ -1,6 +1,17 @@
 /* styles.css */
+
+
+@font-face {
+  font-family: 'ka1';
+  src: url('fonts/ka1.ttf') format('truetype');
+}
+
 body {
-  font-family: "Luckiest Guy";
+  font-family: 'ka1', sans-serif; /* Aplica la fuente */
+}
+
+body {
+  font-family: "ka1";
   margin: 0;
   padding: 0;
   background-image: url("Images/background/FondoPC.png");
@@ -114,7 +125,7 @@ button {
 .botonesImp {
   border-radius: 15px;
   box-shadow: 3px 3px 1px #000;
-  font-family: "Luckiest Guy";
+  font-family: "ka1";
   font-size: 36px;
   font-weight: bold;
   border-color: rgb(0, 0, 0);

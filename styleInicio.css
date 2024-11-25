@@ -1,4 +1,13 @@
 /* Configuración básica */
+@font-face {
+  font-family: 'ka1';
+  src: url('fonts/ka1.ttf') format('truetype');
+}
+
+body {
+  font-family: 'ka1', sans-serif; /* Aplica la fuente */
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -32,7 +41,7 @@ body, html {
     color: #FFF600; 
     background-color: transparent; 
     border: none; 
-    font-family: 'Luckiest Guy', cursive; 
+    font-family: 'ka1', cursive; 
     position: relative; 
     top: -20px;
     left: -20px; 
