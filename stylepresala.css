@@ -265,3 +265,17 @@
     font-family: Arial, sans-serif;
     font-weight: bold;
 }
+#btnClearPlayers {
+    background-color: #ff4d4d; 
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: "Luckiest Guy", Arial, sans-serif;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#btnClearPlayers:hover {
+    background-color: #e60000; 
+}

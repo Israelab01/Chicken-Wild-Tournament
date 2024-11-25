@@ -34,6 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Ya se han añadido los 16 jugadores.");
         }
     });
+document.addEventListener("DOMContentLoaded", () => {
+    const btnClearPlayers = document.getElementById("btnClearPlayers");
+
+    btnClearPlayers.addEventListener("click", () => {
+        // Vaciar la lista y localStorage
+        listaJugadores.length = 0; // Vacía el array
+        localStorage.removeItem("listaJugadores"); // Elimina del almacenamiento
+        updatePlayerList(); // Actualiza la pantalla
+        alert("La lista de jugadores se ha vaciado.");
+    });
+});
 
     btnNext.addEventListener("click", (e) => {
         if (listaJugadores.length < 16) {
@@ -46,16 +57,35 @@ document.addEventListener("DOMContentLoaded", () => {
         const leftColumn = document.querySelector("#playerList .column.left");
         const rightColumn = document.querySelector("#playerList .column.right");
     
-        leftColumn.innerHTML = listaJugadores
-            .slice(0, 8)
-            .map((player, index) => `<li>${index + 1}. ${player}</li>`)
-            .join("");
+
+        leftColumn.innerHTML = "";
+        rightColumn.innerHTML = "";
+   
+        if (listaJugadores.length > 0) {
+            leftColumn.innerHTML = listaJugadores
+                .slice(0, 8)
+                .map((player, index) => `<li>${index + 1}. ${player}</li>`)
+                .join("");
     
-        rightColumn.innerHTML = listaJugadores
-            .slice(8, 16)
-            .map((player, index) => `<li>${index + 9}. ${player}</li>`)
-            .join("");
-    }    
+            rightColumn.innerHTML = listaJugadores
+                .slice(8, 16)
+                .map((player, index) => `<li>${index + 9}. ${player}</li>`)
+                .join("");
+        }
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        const btnClearPlayers = document.getElementById("btnClearPlayers");
+    
+        btnClearPlayers.addEventListener("click", () => {
+            
+            listaJugadores.length = 0; 
+            localStorage.removeItem("listaJugadores"); 
+            updatePlayerList();
+            alert("La lista de jugadores se ha vaciado.");
+        });
+    });
+      
 });
 
 
