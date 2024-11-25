@@ -1,8 +1,64 @@
-const listaJugadores = [
-    "Alejandro", "Pablo Noria", "Javier", "Felipe", "Nando", "Mauricio",
-    "Pablo Jimenez", "Samuel", "Nicolás", "Israel", "Manolo",
-    "Rubén", "Jairo", "Adrián", "Judith", "Mario"
-];
+const listaJugadores = JSON.parse(localStorage.getItem("listaJugadores")) || [];
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btnAddPlayer = document.getElementById("btnAddPlayer");
+    const btnNext = document.getElementById("btnNext");
+
+    // Recuperar lista de jugadores de localStorage al cargar
+    const listaJugadores = JSON.parse(localStorage.getItem("listaJugadores")) || [];
+    updatePlayerList();
+
+    btnAddPlayer.addEventListener("click", () => {
+        const formContainer = document.getElementById("addPlayerForm");
+        formContainer.classList.remove("hidden");
+    });
+
+    const form = document.getElementById("playerForm");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const playerNameInput = document.getElementById("playerName");
+        const playerName = playerNameInput.value.trim();
+
+        if (playerName !== "" && listaJugadores.length < 16) {
+            listaJugadores.push(playerName);
+            localStorage.setItem("listaJugadores", JSON.stringify(listaJugadores)); // Guardar en localStorage
+            updatePlayerList();
+            playerNameInput.value = "";
+
+            if (listaJugadores.length === 16) {
+                alert("Se han añadido los 16 jugadores.");
+                document.getElementById("addPlayerForm").classList.add("hidden");
+            }
+        } else if (listaJugadores.length >= 16) {
+            alert("Ya se han añadido los 16 jugadores.");
+        }
+    });
+
+    btnNext.addEventListener("click", (e) => {
+        if (listaJugadores.length < 16) {
+            e.preventDefault();
+            alert("No puedes jugar sin 16 jugadores.");
+        }
+    });
+
+    function updatePlayerList() {
+        const leftColumn = document.querySelector("#playerList .column.left");
+        const rightColumn = document.querySelector("#playerList .column.right");
+    
+        leftColumn.innerHTML = listaJugadores
+            .slice(0, 8)
+            .map((player, index) => `<li>${index + 1}. ${player}</li>`)
+            .join("");
+    
+        rightColumn.innerHTML = listaJugadores
+            .slice(8, 16)
+            .map((player, index) => `<li>${index + 9}. ${player}</li>`)
+            .join("");
+    }    
+});
+
+
 
 const listaHuevos = ["Madera", "Bronce", "Plata", "Oro", "Esmeralda", "Diamante"];
 const jerarquiaHuevos = {
