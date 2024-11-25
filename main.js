@@ -2,17 +2,19 @@ const listaJugadores = JSON.parse(localStorage.getItem("listaJugadores")) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
     const btnAddPlayer = document.getElementById("btnAddPlayer");
+    const btnClearPlayers = document.getElementById("btnClearPlayers");
     const btnNext = document.getElementById("btnNext");
 
-    // Recuperar lista de jugadores de localStorage al cargar
-    const listaJugadores = JSON.parse(localStorage.getItem("listaJugadores")) || [];
+    // Actualizar lista de jugadores al cargar
     updatePlayerList();
 
+    // Mostrar formulario para añadir jugadores
     btnAddPlayer.addEventListener("click", () => {
         const formContainer = document.getElementById("addPlayerForm");
         formContainer.classList.remove("hidden");
     });
 
+    // Manejar envío del formulario para agregar jugadores
     const form = document.getElementById("playerForm");
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -34,18 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Ya se han añadido los 16 jugadores.");
         }
     });
-document.addEventListener("DOMContentLoaded", () => {
-    const btnClearPlayers = document.getElementById("btnClearPlayers");
 
+    // Manejar limpieza de jugadores
     btnClearPlayers.addEventListener("click", () => {
-        // Vaciar la lista y localStorage
-        listaJugadores.length = 0; // Vacía el array
-        localStorage.removeItem("listaJugadores"); // Elimina del almacenamiento
-        updatePlayerList(); // Actualiza la pantalla
+        listaJugadores.length = 0; // Vaciar array
+        localStorage.removeItem("listaJugadores"); // Limpiar almacenamiento
+        updatePlayerList(); // Actualizar pantalla
         alert("La lista de jugadores se ha vaciado.");
     });
-});
 
+    // Verificar si hay suficientes jugadores para avanzar
     btnNext.addEventListener("click", (e) => {
         if (listaJugadores.length < 16) {
             e.preventDefault();
@@ -53,42 +53,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Actualizar lista visualmente
     function updatePlayerList() {
         const leftColumn = document.querySelector("#playerList .column.left");
         const rightColumn = document.querySelector("#playerList .column.right");
-    
 
         leftColumn.innerHTML = "";
         rightColumn.innerHTML = "";
-   
+
         if (listaJugadores.length > 0) {
             leftColumn.innerHTML = listaJugadores
                 .slice(0, 8)
                 .map((player, index) => `<li>${index + 1}. ${player}</li>`)
                 .join("");
-    
+
             rightColumn.innerHTML = listaJugadores
                 .slice(8, 16)
                 .map((player, index) => `<li>${index + 9}. ${player}</li>`)
                 .join("");
         }
     }
-    
-    document.addEventListener("DOMContentLoaded", () => {
-        const btnClearPlayers = document.getElementById("btnClearPlayers");
-    
-        btnClearPlayers.addEventListener("click", () => {
-            
-            listaJugadores.length = 0; 
-            localStorage.removeItem("listaJugadores"); 
-            updatePlayerList();
-            alert("La lista de jugadores se ha vaciado.");
-        });
-    });
-      
 });
-
-
 
 const listaHuevos = ["Madera", "Bronce", "Plata", "Oro", "Esmeralda", "Diamante"];
 const jerarquiaHuevos = {
