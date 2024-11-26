@@ -8,6 +8,7 @@ const jerarquiaHuevos = {
     "Esmeralda": 4,
     "Diamante": 5
 };
+const listaEliminados = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     function shuffle(array) {
@@ -125,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const huevosJugador2 = document.querySelectorAll('.contenedor-right img');
 
         let currentIndex1 = 0;
-        let currentIndex2 = 0; //esto q es
+        let currentIndex2 = 0;
 
         const mostrarAnimacionHuevos = (huevos, callbackAnimacion) => {
             huevos.forEach(huevo => huevo.classList.remove('visible'));
@@ -174,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const mensaje = document.createElement('div');
         mensaje.classList.add('eliminado');
         mensaje.textContent = `${jugadorEliminado.nombre} ha sido eliminado.`;
-
+        listaEliminados.push(`${jugadorEliminado.nombre}`);
         resultadoDiv.appendChild(mensaje);
 
         setTimeout(() => {
@@ -208,16 +209,32 @@ function closeBracket() {
 function openPlayerListModal() {
     const playerList = document.getElementById("playerList");
     playerList.innerHTML = "";
+
+   
+    const eliminadosSet = new Set(listaEliminados);
+
+    
     listaJugadores.forEach(jugador => {
         const li = document.createElement("li");
         li.textContent = jugador;
-        playerList.appendChild(li);
-        li.style.textDecoration = "line-through";
-        // li.style.color = "";
-    });
 
+       
+        if (eliminadosSet.has(jugador)) {
+            //Estilo para jugadores eliminados
+            li.style.textDecoration = "line-through";
+            li.style.textDecorationColor = "red";
+            li.style.color = "black";
+        } else {
+            //Estilo para jugadores no eliminados
+            li.style.color = "black";
+        }
+
+        playerList.appendChild(li);
+    });
     document.getElementById("playerListModal").classList.remove("hidden");
 }
+
+
 
 function closePlayerListModal() {
     document.getElementById("playerListModal").classList.add("hidden");
