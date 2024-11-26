@@ -1,11 +1,14 @@
-.player-left,
-.player-right {
+@font-face {
+  font-family: 'ka1';
+  src: url('fonts/ka1.ttf') format('truetype');
+}
+.player-left, .player-right {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 402px;
   height: 540px;
-  background-image: url("Images/extras/carta.png");
+  background-image: url('Images/extras/carta.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -15,13 +18,30 @@
   position: relative;
   transition: transform 0.1s ease, box-shadow 0.2s ease;
 }
+
+/* Clases para los diferentes fondos */
+.wood { background-image: url('Images/cards/woodCard.png'); }
+.bronze { background-image: url('Images/cards/bronzeCard.png'); }
+.silver { background-image: url('Images/cards/silverCard.png'); }
+.gold { background-image: url('Images/cards/goldCard.png'); }
+.esmerald { background-image: url('Images/cards/esmeraldCard.png'); }
+.diamond { background-image: url('Images/cards/diamondCard.png'); }
+
 .active {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
 }
 .player-left img,
 .player-right img {
+  margin-top: 45px;
   width: 200px;
   height: 220px;
+  filter: drop-shadow(4px 2px 3px rgba(0, 0, 0, 0.6));
+}
+.player-left h2,
+.player-right h2 {
+  margin-top: 32px;
+  color: black;
+  font-family: 'ka1', sans-serif;
 }
 .contenedor-left img,
 .contenedor-right img {

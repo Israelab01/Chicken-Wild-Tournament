@@ -1,5 +1,6 @@
 @media (max-width: 480px) {
   .popup {
+    font-family: "Luckiest Guy";
     position: fixed;
     top: 0;
     left: 0;
@@ -61,6 +62,7 @@
 
 @media (min-width: 481px) and (max-width: 2560px) {
   .popup {
+    font-family: "Luckiest Guy";
     position: fixed;
     top: 0;
     left: 0;
