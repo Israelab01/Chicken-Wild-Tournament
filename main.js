@@ -1,4 +1,5 @@
 const listaJugadores = JSON.parse(localStorage.getItem("listaJugadores")) || [];
+const listaEliminados = [];
 const fondos = [
     "url('Images/cards/woodCard.png')",
     "url('Images/cards/bronzeCard.png')",
@@ -160,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const mensaje = document.createElement('div');
         mensaje.classList.add('eliminado');
         mensaje.textContent = `${jugadorEliminado.nombre} ha sido eliminado.`;
+        listaEliminados.push(`${jugadorEliminado.nombre}`);
 
         resultadoDiv.appendChild(mensaje);
 
@@ -195,12 +197,28 @@ function closeBracket() {
 function openPlayerListModal() {
     const playerList = document.getElementById("playerList");
     playerList.innerHTML = "";
+
+
+    const eliminadosSet = new Set(listaEliminados);
+
+
     listaJugadores.forEach(jugador => {
         const li = document.createElement("li");
         li.textContent = jugador;
+
+
+        if (eliminadosSet.has(jugador)) {
+            //Estilo para jugadores eliminados
+            li.style.textDecoration = "line-through";
+            li.style.textDecorationColor = "red";
+            li.style.color = "black";
+        } else {
+            //Estilo para jugadores no eliminados
+            li.style.color = "black";
+        }
+
         playerList.appendChild(li);
     });
-
     document.getElementById("playerListModal").classList.remove("hidden");
 }
 
