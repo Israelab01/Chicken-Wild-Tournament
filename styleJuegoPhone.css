@@ -1,0 +1,263 @@
+@media (max-width: 480px) {
+  body {
+    font-family: "Luckiest Guy";
+    margin: 0;
+    padding: 0;
+    background-image: url("Images/background/Movil.png");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* para centrar verticalmente */
+    height: 70vh;
+    overflow: hidden; /* Oculta todo el scroll */
+    width: 100vw; /* Ajusta al ancho completo */
+}
+
+  
+    .game-container {
+      padding: 5px;
+      width: 100%;
+    }
+  
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      padding: 0 10px;
+    }
+  
+    .menu-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  
+    /* Estilo de los botones */
+    .button-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding-top: 30px;
+    }
+  
+    .title {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 28px;
+      margin: 0;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 1px #000;
+      -webkit-text-stroke: 0.5px black;
+      padding-left: 20px;
+    }
+    .fights{
+    font-size: 12px;
+    }
+  
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+    }
+  
+    .container-players {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 100%;
+    }
+  
+    .player-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .middle-image {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 20%;
+      height: auto;
+    }
+  
+    .middle-image img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10%;
+    }
+  
+    .buttons {
+      position: absolute;
+      bottom: 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+    }
+  
+    button {
+      background-color: #ffee00;
+      padding: 8px 15px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  
+    .botonesImp {
+        border-radius: 10px;
+        box-shadow: 2px 2px 1px #000;
+        font-family: "Luckiest Guy";
+        font-size: 20px;
+        font-weight: bold;
+        border-color: rgb(0, 0, 0);
+        border-style: solid;
+        border-width: 3px;
+        width: 150px;
+        height: 40px;
+    }
+  
+    button:hover {
+      background-color: #ffaa00;
+    }
+  
+    .contenedor-left,
+    .contenedor-right {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+  
+    .players {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  
+    .player {
+      width: 100%;
+    }
+  
+    .player h2 {
+      margin: 5px 0;
+    }
+  
+    .chicken,
+    .egg {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .ranking img {
+      width: 30px;
+      margin: 0 3px;
+    }
+  
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .modal-content {
+      background: white;
+      color: black;
+      padding: 15px;
+      border-radius: 5px;
+    }
+  
+    .close-modal {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  
+    #playerList {
+      list-style-type: none;
+      padding: 0;
+    }
+  
+    #playerList li {
+      margin: 5px 0;
+    }
+  
+    .ranking img {
+      opacity: 0.2;
+      transition: opacity 0.3s ease-in-out;
+    }
+  
+    .ranking img.visible {
+      opacity: 1;
+    }
+  
+    .eliminado {
+      color: #ffee00;
+      font-size: 1em;
+      text-align: center;
+      margin: 10px 0;
+    }
+    
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 50%;
+      height: 60px;
+      color: white;
+      text-align: center;
+      padding: 5px;
+      margin: 15px;
+    }
+  
+    .hierarchy {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+    }
+  
+    .hierarchy img {
+      width: 30px;
+      height: auto;
+      transition: transform 0.3s;
+    }
+  
+    .textoJerarquia {
+      position: absolute;
+      font-size: 12px;
+    }
+  }
+  
