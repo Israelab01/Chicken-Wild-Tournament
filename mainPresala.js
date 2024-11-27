@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnAddPlayer.addEventListener("click", () => {
         const formContainer = document.getElementById("addPlayerForm");
         formContainer.classList.remove("hidden");
+        audioOpenWindow();
     });
 
  // Manejar envío del formulario para agregar jugadores
@@ -50,6 +51,7 @@ form.addEventListener("submit", (e) => {
         localStorage.removeItem("listaJugadores"); // Limpiar almacenamiento
         updatePlayerList(); // Actualizar pantalla
         showMessage("The list of players has been emptied", "info");
+        audioClearPlayers();
     });
 
     // Verificar si hay suficientes jugadores para avanzar
@@ -95,3 +97,26 @@ form.addEventListener("submit", (e) => {
     }
     
 });
+function audioOpenWindow(){
+    const openSound = new Audio('sounds/pincharBoton.mp3'); 
+    openSound.volume = 0.5; 
+    openSound.play().catch((error) => {
+        console.error('Error loading sound', error);
+    });
+}
+
+function audioCloseWindow(){
+    const openSound = new Audio('sounds/botonVolver.mp3');
+    openSound.volume = 0.5; 
+    openSound.play().catch((error) => {
+        console.error('Error loading sound', error);
+    });
+}
+
+function audioClearPlayers(){
+    const openSound = new Audio('sounds/chicken-noise-196746.mp3');
+    openSound.volume = 0.5; 
+    openSound.play().catch((error) => {
+        console.error('Error loading sound', error);
+    });
+}

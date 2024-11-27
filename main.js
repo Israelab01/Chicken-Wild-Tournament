@@ -57,6 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function iniciarBatalla() {
+        //Audio
+        
+        const swordSound = new Audio('sounds/espadaChocando.mp3'); // Ruta al sonido
+        swordSound.volume = 0.5; // Ajusta el volumen según prefieras
+        swordSound.play().catch((error) => {
+            console.error('Error loading sound', error);
+        });
         if (jugadoresRestantes.length <= 1) {
             const ganadorFinal = jugadoresRestantes[0];
             resultadoDiv.innerHTML = `<h2>¡El ganador final es ${ganadorFinal.nombre}!</h2>`;
@@ -180,21 +187,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function openPopup() {
     document.getElementById("popup").classList.remove("hidden");
+    audioOpenWindow();
 }
 
 function closePopup() {
     document.getElementById("popup").classList.add("hidden");
+    audioCloseWindow();
 }
 
 function openBracket() {
     document.getElementById("bracket").classList.remove("hidden");
+    audioOpenWindow();
+
 }
 
 function closeBracket() {
     document.getElementById("bracket").classList.add("hidden");
+    audioCloseWindow();
 }
 
 function openPlayerListModal() {
+    //audio
+    
     const playerList = document.getElementById("playerList");
     playerList.innerHTML = "";
 
@@ -220,10 +234,13 @@ function openPlayerListModal() {
         playerList.appendChild(li);
     });
     document.getElementById("playerListModal").classList.remove("hidden");
+    audioOpenWindow();
+   
 }
 
 function closePlayerListModal() {
     document.getElementById("playerListModal").classList.add("hidden");
+    audioCloseWindow();
 }
 
 // Función para manejar la inclinación dinámica
@@ -259,3 +276,18 @@ function addHoverEffect(card) {
   addHoverEffect(card2);
 
 
+function audioOpenWindow(){
+    const openSound = new Audio('sounds/pincharBoton.mp3'); 
+    openSound.volume = 0.5; 
+    openSound.play().catch((error) => {
+        console.error('Error loading sound', error);
+    });
+}
+
+function audioCloseWindow(){
+    const openSound = new Audio('sounds/botonVolver.mp3');
+    openSound.volume = 0.5; 
+    openSound.play().catch((error) => {
+        console.error('Error loading sound', error);
+    });
+}

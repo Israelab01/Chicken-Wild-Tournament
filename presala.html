@@ -19,7 +19,7 @@
             <h1>LOBBY</h1>
         </div>
         <div class="botones">
-            <a href="juego.html"><button class="boton large" id="btnNext">GAME</button></a></div>
+            <a href="juego.html" onclick="audioOpenWindow()"><button class="boton large" id="btnNext">GAME</button></a></div>
         <button class="boton small" id="btnAddPlayer">ADD PLAYERS</button>
         <button class="boton small" id="btnClearPlayers">CLEAR PLAYERS</button> 
         
@@ -28,7 +28,7 @@
             <div class="popup-content">
                 <span
                     class="close-icon"
-                    onclick="document.getElementById('addPlayerForm').classList.add('hidden')"
+                    onclick="document.getElementById('addPlayerForm').classList.add('hidden');audioCloseWindow()"
                     >X</span
                 >
                 <h2>ADD PLAYERS</h2>
