@@ -1,20 +1,20 @@
 const listaJugadores = JSON.parse(localStorage.getItem("listaJugadores")) || [];
 const listaEliminados = [];
 const fondos = [
-    "url('Images/cards/woodCard.png')",
-    "url('Images/cards/bronzeCard.png')",
-    "url('Images/cards/silverCard.png')",
-    "url('Images/cards/goldCard.png')",
-    "url('Images/cards/esmeraldCard.png')",
-    "url('Images/cards/diamondCard.png')"
+    "url('Images/cards/woodCard.webp')",
+    "url('Images/cards/bronzeCard.webp')",
+    "url('Images/cards/silverCard.webp')",
+    "url('Images/cards/goldCard.webp')",
+    "url('Images/cards/esmeraldCard.webp')",
+    "url('Images/cards/diamondCard.webp')"
 ];
 const jerarquiaFondos = {
-    "url('Images/cards/woodCard.png')": 0,
-    "url('Images/cards/bronzeCard.png')": 1,
-    "url('Images/cards/silverCard.png')": 2,
-    "url('Images/cards/goldCard.png')": 3,
-    "url('Images/cards/esmeraldCard.png')": 4,
-    "url('Images/cards/diamondCard.png')": 5
+    "url('Images/cards/woodCard.webp')": 0,
+    "url('Images/cards/bronzeCard.webp')": 1,
+    "url('Images/cards/silverCard.webp')": 2,
+    "url('Images/cards/goldCard.webp')": 3,
+    "url('Images/cards/esmeraldCard.webp')": 4,
+    "url('Images/cards/diamondCard.webp')": 5
 };
 
 document.addEventListener('DOMContentLoaded', () => {

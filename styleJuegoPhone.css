@@ -1,19 +1,22 @@
 @media (max-width: 480px) {
-    body {
-      font-family: "Luckiest Guy";
-      margin: 0;
-      padding: 0;
-      background-image: url("Images/background/Movil.png");
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-      overflow-x: hidden;
-    }
+  body {
+    font-family: "Luckiest Guy";
+    margin: 0;
+    padding: 0;
+    background-image: url("Images/background/Movil.png");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* para centrar verticalmente */
+    height: 70vh;
+    overflow: hidden; /* Oculta todo el scroll */
+    width: 100vw; /* Ajusta al ancho completo */
+}
+
   
     .game-container {
       padding: 5px;
@@ -48,7 +51,7 @@
     .title {
       flex-grow: 1;
       text-align: center;
-      font-size: 48px;
+      font-size: 28px;
       margin: 0;
       font-weight: bold;
       color: white;
@@ -102,7 +105,7 @@
   
     .buttons {
       position: absolute;
-      bottom: 10px;
+      bottom: 90px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -127,7 +130,7 @@
         border-style: solid;
         border-width: 3px;
         width: 150px;
-        height: 50px;
+        height: 40px;
     }
   
     button:hover {
@@ -224,15 +227,16 @@
       text-align: center;
       margin: 10px 0;
     }
-  
+    
     footer {
       position: fixed;
       bottom: 0;
-      width: 100%;
+      width: 50%;
       height: 60px;
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 5px;
+      margin: 15px;
     }
   
     .hierarchy {

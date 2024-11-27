@@ -7,9 +7,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 402px;
-  height: 540px;
-  background-image: url('Images/extras/carta.png');
+  width: 382px;
+  height: 520px;
+  background-image: url('Images/cards/diamondCard.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,12 +21,12 @@
 }
 
 /* Clases para los diferentes fondos */
-.wood { background-image: url('Images/cards/woodCard.png'); }
-.bronze { background-image: url('Images/cards/bronzeCard.png'); }
-.silver { background-image: url('Images/cards/silverCard.png'); }
-.gold { background-image: url('Images/cards/goldCard.png'); }
-.esmerald { background-image: url('Images/cards/esmeraldCard.png'); }
-.diamond { background-image: url('Images/cards/diamondCard.png'); }
+.wood { background-image: url('Images/cards/woodCard.webp'); }
+.bronze { background-image: url('Images/cards/bronzeCard.webp'); }
+.silver { background-image: url('Images/cards/silverCard.webp'); }
+.gold { background-image: url('Images/cards/goldCard.webp'); }
+.esmerald { background-image: url('Images/cards/esmeraldCard.webp'); }
+.diamond { background-image: url('Images/cards/diamondCard.webp'); }
 
 .active {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
@@ -68,8 +68,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 190px;
-    height: 260px;
+    width: 165px;
+    height: 220px;
     background-image: url('Images/extras/carta.png');
     background-size: cover;
     background-position: center;
@@ -82,12 +82,12 @@
   }
 
   /* Clases para los diferentes fondos */
-  .wood { background-image: url('Images/cards/woodCard.png'); }
-  .bronze { background-image: url('Images/cards/bronzeCard.png'); }
-  .silver { background-image: url('Images/cards/silverCard.png'); }
-  .gold { background-image: url('Images/cards/goldCard.png'); }
-  .esmerald { background-image: url('Images/cards/esmeraldCard.png'); }
-  .diamond { background-image: url('Images/cards/diamondCard.png'); }
+  .wood { background-image: url('Images/cards/woodCard.webp'); }
+  .bronze { background-image: url('Images/cards/bronzeCard.webp'); }
+  .silver { background-image: url('Images/cards/silverCard.webp'); }
+  .gold { background-image: url('Images/cards/goldCard.webp'); }
+  .esmerald { background-image: url('Images/cards/esmeraldCard.webp'); }
+  .diamond { background-image: url('Images/cards/diamondCard.webp'); }
 
   .active {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
