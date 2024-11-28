@@ -18,11 +18,16 @@
         <div class="presala">
             <h1>LOBBY</h1>
         </div>
+
         <div class="botones">
-            <a href="juego.html"><button class="boton large" id="btnNext">GAME</button></a></div>
+            <button class="boton large" id="btnNext" onclick="audioStartGame();">GAME</button>
+        </div>
         <button class="boton small" id="btnAddPlayer">ADD PLAYERS</button>
-        <button class="boton small" id="btnClearPlayers">CLEAR PLAYERS</button> 
+        <button class="boton small" id="btnClearPlayers">CLEAR PLAYERS</button>
         
+        <audio id="background-audio" loop>
+            <source src="sounds/posibleIntro2.mp3" type="audio/mp3" />
+        </audio>
         
         <div id="addPlayerForm" class="popup hidden">
             <div class="popup-content">

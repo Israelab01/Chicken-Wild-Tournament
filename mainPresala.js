@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         audioOpenWindow();
     });
 
+
  // Manejar envío del formulario para agregar jugadores
 const form = document.getElementById("playerForm");
 form.addEventListener("submit", (e) => {
@@ -120,3 +121,35 @@ function audioClearPlayers(){
         console.error('Error loading sound', error);
     });
 }
+
+function audioStartGame() {
+    const audio = new Audio('sounds/fight-deep-voice.mp3'); 
+    audio.volume = 0.5;
+
+    audio.play().then(() => {
+        setTimeout(() => {
+            window.location.href = 'juego.html';
+        }, 1000);
+    }).catch((error) => {
+        console.log('Error with audio audio:', error);
+        window.location.href = 'juego.html';
+    });
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('background-audio');
+
+    const playAudio = () => {
+      audio.volume = 0.5;
+      audio.play().catch((error) => {
+        console.log('Autoplay blocked. Waiting for user interaction.', error);
+      });
+    };
+
+    playAudio();
+    document.body.addEventListener('click', () => {
+      audio.play();
+    }, { once: true });
+  });

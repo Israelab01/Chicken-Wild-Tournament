@@ -16,6 +16,21 @@ const jerarquiaFondos = {
     "url('Images/cards/esmeraldCard.webp')": 4,
     "url('Images/cards/diamondCard.webp')": 5
 };
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('background-audio');
+
+    const playAudio = () => {
+      audio.volume = 0.25;
+      audio.play().catch((error) => {
+        console.log('Autoplay blocked. Waiting for user interaction.', error);
+      });
+    };
+
+    playAudio();
+    document.body.addEventListener('click', () => {
+      audio.play();
+    }, { once: true });
+  });
 
 document.addEventListener('DOMContentLoaded', () => {
     function shuffle(array) {
