@@ -12,6 +12,7 @@
         z-index: 1000;
     }
     .popup-content-players{
+        font-family: "Luckiest Guy";
         position: relative;
         background: white;
         border-radius: 10px;
@@ -79,6 +80,7 @@
 }
 
 .popup-content {
+    font-family: "Luckiest Guy";
     position: relative;
     background: white;
     border-radius: 10px;
