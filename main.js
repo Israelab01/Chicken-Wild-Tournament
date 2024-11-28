@@ -17,8 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    
 
+
+    
     shuffle(listaJugadores);
 
     const listaPollos = Array.from({ length: 16 }, (_, i) => `Images/avatares/Avatar${i + 1}.png`);
