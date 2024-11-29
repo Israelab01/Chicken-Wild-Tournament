@@ -10,6 +10,27 @@
 <body>
   <div class="bg-container">
     <a href="presala.html"><button class="start-btn">START</button></a>
+    <audio id="background-audio" loop>
+      <source src="sounds/posibleIntro.mp3" type="audio/mpeg">
+    </audio>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('background-audio');
+
+      const playAudio = () => {
+        audio.volume = 0.5;
+        audio.play().catch((error) => {
+          console.log('Autoplay blocked. Waiting for user interaction.', error);
+        });
+      };
+
+      playAudio();
+      document.body.addEventListener('click', () => {
+        audio.play();
+      }, { once: true });
+    });
+  </script>
 </body>
 </html>

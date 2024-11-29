@@ -18,17 +18,34 @@
         <div class="presala">
             <h1>LOBBY</h1>
         </div>
+<<<<<<< HEAD
         <div class="botones">
             <a href="juego.html"><button class="boton large" id="btnNext">GAME</button></a></div>
         <button class="boton small" id="btnAddPlayer">ADD PLAYERS</button>
         <button class="boton small" id="btnClearPlayers">CLEAR PLAYERS</button> 
         
+=======
+
+        <div class="botones">
+            <button class="boton large" id="btnNext">GAME</button>
+        </div>
+        <button class="boton small" id="btnAddPlayer">ADD PLAYERS</button>
+        <button class="boton small" id="btnClearPlayers">CLEAR PLAYERS</button>
+        
+        <audio id="background-audio" loop>
+            <source src="sounds/posibleIntro2.mp3" type="audio/mp3" />
+        </audio>
+>>>>>>> origin/AleSonidos
         
         <div id="addPlayerForm" class="popup hidden">
             <div class="popup-content">
                 <span
                     class="close-icon"
+<<<<<<< HEAD
                     onclick="document.getElementById('addPlayerForm').classList.add('hidden')"
+=======
+                    onclick="document.getElementById('addPlayerForm').classList.add('hidden');audioCloseWindow()"
+>>>>>>> origin/AleSonidos
                     >X</span
                 >
                 <h2>ADD PLAYERS</h2>
@@ -60,6 +77,11 @@
             </div>
         </div>
         <div id="messageContainer"></div>
+<<<<<<< HEAD
         <script src="mainPresala.js"></script>
+=======
+        <script src="mainPresala.js">
+        </script>
+>>>>>>> origin/AleSonidos
     </body>
 </html>

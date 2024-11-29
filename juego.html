@@ -9,12 +9,18 @@
       href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
     />
     <link rel="stylesheet" href="styleJuego.css" />
+    <link rel="stylesheet" href="styleJuegoPhone.css" />
     <link rel="stylesheet" href="stylePopup.css" />
+    <link rel="stylesheet" href="styleCarta.css" />
   </head>
   <body>
     <div class="game-container">
+      <audio id="background-audio" loop>
+        <source src="sounds/intro.mp3" type="audio/mpeg">
+      </audio>
       <header>
         <h1 class="title" id="round-number">CW TOURNAMENT</h1>
+        <h3 class="fights" id="fight-number"></h3>
         <button class="menu-btn" onclick="openPopup()">☰</button>
         <div id="popup" class="popup hidden">
           <div class="popup-content">
@@ -35,16 +41,8 @@
         <div class="container-players">
           <div class="player-section">
             <div class="player-left">
-              <h2></h2>
               <img src="Images/avatares/Avatar1.png" alt="Avatar izquierda" />
-              <div class="contenedor-left">
-                <img src="Images/huevos/huevoMadera.png" alt="Madera" class="hidden" />
-                <img src="Images/huevos/huevoBronce.png" alt="Bronce" class="hidden" />
-                <img src="Images/huevos/huevoPlata.png" alt="Plata" class="hidden" />
-                <img src="Images/huevos/huevoOro.png" alt="Oro" class="hidden" />
-                <img src="Images/huevos/huevoEsmeralda.png" alt="Esmeralda" class="hidden" />
-                <img src="Images/huevos/huevoDiamante.png" alt="Diamante" class="hidden" />
-              </div>
+              <h2></h2>
             </div>
             <div class="middle-image">
               <img src="Images/extras/Versus.png" alt="Versus" />
@@ -65,16 +63,8 @@
               </div>
             </div>
             <div class="player-right">
-              <h2></h2>
               <img src="Images/avatares/Avatar2.png" alt="Avatar derecha" />
-              <div class="contenedor-right">
-                <img src="Images/huevos/huevoMadera.png" alt="Madera" class="hidden" />
-                <img src="Images/huevos/huevoBronce.png" alt="Bronce" class="hidden" />
-                <img src="Images/huevos/huevoPlata.png" alt="Plata" class="hidden" />
-                <img src="Images/huevos/huevoOro.png" alt="Oro" class="hidden" />
-                <img src="Images/huevos/huevoEsmeralda.png" alt="Esmeralda" class="hidden" />
-                <img src="Images/huevos/huevoDiamante.png" alt="Diamante" class="hidden" />
-              </div>
+              <h2></h2>
             </div>
           </div>
         </div>
@@ -89,7 +79,6 @@
             <span class="close-icon" onclick="closePlayerListModal()">X</span>
             <h2 class="popup-title">Players</h2>
             <ul class="popup-playerList" id="playerList">
-              <!-- Aquí se cargará la lista de jugadores -->
             </ul>
           </div>
         </div>
