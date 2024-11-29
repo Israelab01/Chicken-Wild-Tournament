@@ -46,9 +46,9 @@
         text-align: left;
     }
     .popup.hidden {
-        display: none; 
+        display: none; /* Oculta la ventana emergente */
     }
-     
+     /* Estilo del icono "X" */
   .close-icon {
     position: absolute;
     top: 10px;
@@ -76,7 +76,7 @@
 }
 
 .popup.hidden {
-    display: none; 
+    display: none; /* Oculta la ventana emergente */
 }
 
 .popup-content {
@@ -149,7 +149,7 @@
     text-decoration: none;
     color: #FF0000;
   }
-   
+   /* Estilo del icono "X" */
    .close-icon {
     position: absolute;
     top: 10px;

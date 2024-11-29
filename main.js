@@ -1,14 +1,4 @@
 const listaJugadores = JSON.parse(localStorage.getItem("listaJugadores")) || [];
-<<<<<<< HEAD
-const listaHuevos = ["Madera", "Bronce", "Plata", "Oro", "Esmeralda", "Diamante"];
-const jerarquiaHuevos = {
-    "Madera": 0,
-    "Bronce": 1,
-    "Plata": 2,
-    "Oro": 3,
-    "Esmeralda": 4,
-    "Diamante": 5
-=======
 const listaEliminados = [];
 const fondos = [
     "url('Images/cards/woodCard.webp')",
@@ -25,7 +15,6 @@ const jerarquiaFondos = {
     "url('Images/cards/goldCard.webp')": 3,
     "url('Images/cards/esmeraldCard.webp')": 4,
     "url('Images/cards/diamondCard.webp')": 5
->>>>>>> origin/AleSonidos
 };
 document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('background-audio');
@@ -51,9 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
-
-    
     shuffle(listaJugadores);
 
     const listaPollos = Array.from({ length: 16 }, (_, i) => `Images/avatares/Avatar${i + 1}.png`);

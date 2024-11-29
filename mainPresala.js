@@ -13,15 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     btnAddPlayer.addEventListener("click", () => {
         const formContainer = document.getElementById("addPlayerForm");
         formContainer.classList.remove("hidden");
-<<<<<<< HEAD
-    });
-
-=======
         audioOpenWindow();
     });
 
 
->>>>>>> origin/AleSonidos
  // Manejar envío del formulario para agregar jugadores
 const form = document.getElementById("playerForm");
 form.addEventListener("submit", (e) => {
@@ -57,10 +52,7 @@ form.addEventListener("submit", (e) => {
         localStorage.removeItem("listaJugadores"); // Limpiar almacenamiento
         updatePlayerList(); // Actualizar pantalla
         showMessage("The list of players has been emptied", "info");
-<<<<<<< HEAD
-=======
         audioClearPlayers();
->>>>>>> origin/AleSonidos
     });
 
     // Verificar si hay suficientes jugadores para avanzar
@@ -68,8 +60,6 @@ form.addEventListener("submit", (e) => {
         if (listaJugadores.length < 16) {
             e.preventDefault();
             showMessage("You can't play without 16 players", "error");
-<<<<<<< HEAD
-=======
         } else {
                 const audio = new Audio('sounds/fight-deep-voice.mp3'); 
                 audio.volume = 0.5;
@@ -82,7 +72,6 @@ form.addEventListener("submit", (e) => {
                     console.log('Error with audio audio:', error);
                     window.location.href = 'juego.html';
                 });
->>>>>>> origin/AleSonidos
         }
     });
 
@@ -121,8 +110,6 @@ form.addEventListener("submit", (e) => {
     }
     
 });
-<<<<<<< HEAD
-=======
 function audioOpenWindow(){
     const openSound = new Audio('sounds/pincharBoton.mp3'); 
     openSound.volume = 0.5; 
@@ -162,4 +149,3 @@ document.addEventListener('DOMContentLoaded', () => {
       audio.play();
     }, { once: true });
   });
->>>>>>> origin/AleSonidos
