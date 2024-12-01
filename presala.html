@@ -1,65 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-        <title>LOBBY</title>
-        <link rel="stylesheet" href="stylePresala.css" />
-        <link rel="stylesheet" href="stylePopup.css" />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
-        />
-    </head>
-    <body>
-        <div class="presala">
-            <h1>LOBBY</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>LOBBY</title>
+    <link rel="icon" type="image/png" href="Images/extras/faviconCWT.png" />
+    <link rel="stylesheet" href="stylePresala.css" />
+    <link rel="stylesheet" href="stylePresalaPhone.css" />
+    <link rel="stylesheet" href="stylePopup.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+    />
+  </head>
+  <body>
+    <div class="presala">
+      <h1>LOBBY</h1>
+    </div>
+
+    <div class="botones">
+      <button class="boton large" id="btnNext">GAME</button>
+    </div>
+    <button class="boton small" id="btnAddPlayer">ADD PLAYERS</button>
+    <button class="boton small" id="btnClearPlayers">CLEAR PLAYERS</button>
+
+    <audio id="background-audio" loop>
+      <source src="sounds/posibleIntro2.mp3" type="audio/mp3" />
+    </audio>
+
+    <div id="addPlayerForm" class="popup hidden">
+      <div class="popup-content">
+        <span
+          class="close-icon"
+          onclick="document.getElementById('addPlayerForm').classList.add('hidden');audioCloseWindow()"
+          >X</span
+        >
+        <h2>ADD PLAYERS</h2>
+        <form id="playerForm">
+          <input
+            type="text"
+            id="playerName"
+            placeholder="Name player"
+            required
+          />
+          <button id="buttonAdd" type="submit">Add</button>
+        </form>
+        <ul id="playerList" class="player-grid">
+          <div id="playerList" class="player-grid">
+            <div class="column left"></div>
+            <div class="column right"></div>
+          </div>
+        </ul>
+        <div id="playerListModal" class="popup hidden">
+          <div class="popup-content-players">
+            <span class="close-icon" onclick="closePlayerListModal()">X</span>
+            <h2 class="popup-title">Players</h2>
+            <ul class="popup-playerList" id="playerList"></ul>
+          </div>
         </div>
-        <div class="botones">
-            <a href="juego.html"><button class="boton large" id="btnNext">GAME</button></a></div>
-        <button class="boton small" id="btnAddPlayer">ADD PLAYERS</button>
-        <button class="boton small" id="btnClearPlayers">CLEAR PLAYERS</button> 
-        
-        
-        <div id="addPlayerForm" class="popup hidden">
-            <div class="popup-content">
-                <span
-                    class="close-icon"
-                    onclick="document.getElementById('addPlayerForm').classList.add('hidden')"
-                    >X</span
-                >
-                <h2>ADD PLAYERS</h2>
-                <form id="playerForm">
-                    <input
-                        type="text"
-                        id="playerName"
-                        placeholder="Name player" required 
-                        />
-                    <button id="buttonAdd" type="submit">Add</button>
-                </form>
-                <ul id="playerList" class="player-grid">
-                    <div id="playerList" class="player-grid">
-                        <div class="column left"></div>
-                        <div class="column right"></div>
-                    </div>
-                </ul>
-                <div id="playerListModal" class="popup hidden">
-                    <div class="popup-content-players">
-                        <span
-                            class="close-icon"
-                            onclick="closePlayerListModal()"
-                            >X</span
-                        >
-                        <h2 class="popup-title">Players</h2>
-                        <ul class="popup-playerList" id="playerList"></ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="messageContainer"></div>
-        <script src="mainPresala.js"></script>
-    </body>
+      </div>
+    </div>
+    <div id="messageContainer"></div>
+    <footer>
+      <div class="description">
+        <img
+          src="Images/extras/botonInfo.png"
+          alt="info"
+          onclick="openInfoPopup()"
+          id="info-img"
+        />
+      </div>
+    </footer>
+
+    <div id="info-popup" class="info-popup" style="display: none">
+      <div class="info-popup-content">
+        <span class="info-close" onclick="closeInfoPopup()">X</span>
+        <h2 class="info-title">Info</h2>
+        <p>
+          Immerse yourself in a world of feathers and eggs! In our tournament,
+          each chicken is unique and its fate is tied to the value of its egg.
+          At the start, you will receive a card with your personalized chicken
+          and an egg of random value (wood, bronze, silver, gold, emerald or
+          diamond). Take on other players randomly in one-on-one duels! The
+          player with the highest value egg will win. Advance through the
+          elimination brackets: round of 16, quarterfinals, semifinals and
+          final! Will you be the one to take the diamond egg and become the
+          legend of the chicken coop? Don't miss it!
+        </p>
+      </div>
+    </div>
+  </body>
+  <script src="mainPresala.js"></script>
 </html>

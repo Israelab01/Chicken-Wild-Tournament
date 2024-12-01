@@ -1,45 +1,42 @@
-/* styles.css */
+@media (min-width: 481px) and (max-width: 2560px) {
 body {
-    font-family: 'Luckiest Guy';
-    margin: 0;
-    padding: 0;
-    background-image: url("Images/background/FondoPC.png");
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    overflow-x: hidden;
-    
-  }
-  
-  .game-container {
-    padding: 10px;
-    width: 100%;
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;         
-    height: 100px;                 
-    padding: 0 20px;
-  }
-  
-  .menu-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-  }
+  font-family: "Luckiest Guy";
+  margin: 0;
+  padding: 0;
+  background-image: url("Images/background/FondoPC.png");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+}
 
-/* Estilo de los botones */
+.game-container {
+  padding: 10px;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
 .button-menu {
   display: flex;
   flex-direction: column;
@@ -59,6 +56,11 @@ body {
   display: inline-block;
   -webkit-text-stroke: 1px black;
   padding-left: 80px;
+}
+.fights{
+  text-shadow: 2px 2px 1px #000;
+  -webkit-text-stroke: 0.5px black;
+  font-size: 40px;
 }
 
 main {
@@ -94,7 +96,15 @@ main {
 .middle-image img {
   max-width: 100%;
   height: auto;
-  margin-top: 20%;
+  margin-top: 30%;
+  margin-bottom: 10%;
+}
+#resultado {
+  color: #ffee00;
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 2px 2px 1px #000;
+  -webkit-text-stroke: 0.5px black;
 }
 .buttons {
   position: absolute;
@@ -121,15 +131,16 @@ button {
   border-color: rgb(0, 0, 0);
   border-style: solid;
   border-width: 4px;
-  width: 274px;
-  height: 69px;
+  width: 264px;
+  height: 64px;
 }
 
 button:hover {
   background-color: #ffaa00;
 }
 
-.contenedor-left, .contenedor-right {
+.contenedor-left,
+.contenedor-right {
   position: relative;
   width: 200px;
   height: 200px;
@@ -232,38 +243,48 @@ button:hover {
 .ranking img.visible {
   opacity: 1;
 }
-.eliminado {
+#resultado {
   color: #ffee00;
-  font-size: 1.5em;
   text-align: center;
+  font-size: 40px;
   margin: 10px 0;
+  text-shadow: 2px 2px 1px #000;
+  -webkit-text-stroke: 1.5px black;
 }
 footer {
+  background-image: url("Images/extras/footerimg.png");
+  background-size: cover;
+  background-position: center;
   position: fixed;
+  margin: 10px;
   bottom: 0;
-  width: 30%;
-  height: 80px;
-  color: white;
+  width: 200px;
+  height: 40px;
   text-align: center;
-  padding: 10px;
+  padding: 30px;
+}
+.bcFooter{
+  width: 100%;
 }
 .hierarchy {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  left: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .hierarchy img {
-  width: 40px;
+  width: 30px;
   height: auto;
   transition: transform 0.3s;
 }
 
 .textoJerarquia {
-  position: absolute;
+  margin-top: -12px;
+  color: black;
   font-size: 14px;
+
+}
 }

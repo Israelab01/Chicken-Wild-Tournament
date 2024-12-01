@@ -3,13 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="Images/extras/faviconCWT.png"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap">
   <link rel="stylesheet" href="styleInicio.css">
   <title>Inicio</title>
 </head>
 <body>
+  
   <div class="bg-container">
+    <h1 class="nombreIndex">CHICKEN</br>WILD</br>TOURNAMENT</h1>
     <a href="presala.html"><button class="start-btn">START</button></a>
+    <audio id="background-audio" loop>
+      <source src="sounds/posibleIntro.mp3" type="audio/mpeg">
+    </audio>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('background-audio');
+
+      const playAudio = () => {
+        audio.volume = 0.5;
+        audio.play().catch((error) => {
+          console.log('Autoplay blocked. Waiting for user interaction.', error);
+        });
+      };
+
+      playAudio();
+      document.body.addEventListener('click', () => {
+        audio.play();
+      }, { once: true });
+    });
+  </script>
 </body>
 </html>
