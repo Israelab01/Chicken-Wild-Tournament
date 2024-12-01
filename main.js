@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function iniciarBatalla() {
         //Audio
         
-        const swordSound = new Audio('sounds/espadaChocando.mp3'); // Ruta al sonido
-        swordSound.volume = 0.5; // Ajusta el volumen según prefieras
+        const swordSound = new Audio('sounds/espadaChocando.mp3');
+        swordSound.volume = 0.5;
         swordSound.play().catch((error) => {
             console.error('Error loading sound', error);
         });
@@ -237,12 +237,10 @@ function openPlayerListModal() {
 
 
         if (eliminadosSet.has(jugador)) {
-            //Estilo para jugadores eliminados
             li.style.textDecoration = "line-through";
             li.style.textDecorationColor = "red";
             li.style.color = "black";
         } else {
-            //Estilo para jugadores no eliminados
             li.style.color = "black";
         }
 
@@ -258,21 +256,17 @@ function closePlayerListModal() {
     audioCloseWindow();
 }
 
-// Función para manejar la inclinación dinámica
 function addHoverEffect(card) {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left; // Coordenada X relativa al div
-      const y = e.clientY - rect.top;  // Coordenada Y relativa al div
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top; 
 
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * 25; 
+      const rotateY = ((centerX - x) / centerX) * 25; 
 
-      // Calcula la rotación según la posición del cursor
-      const rotateX = ((y - centerY) / centerY) * 25; // Inclinación vertical
-      const rotateY = ((centerX - x) / centerX) * 25; // Inclinación horizontal
-
-      // Aplica la transformación
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       card.classList.add('active');
     });
@@ -283,7 +277,6 @@ function addHoverEffect(card) {
     });
   }
 
-  // Aplica la función a las dos clases distintas
   const card1 = document.querySelector('.player-left');
   const card2 = document.querySelector('.player-right');
 

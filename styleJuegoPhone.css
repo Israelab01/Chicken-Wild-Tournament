@@ -1,4 +1,7 @@
 @media (max-width: 480px) {
+  * {
+    box-sizing: border-box;
+  }
   body {
     font-family: "Luckiest Guy";
     margin: 0;
@@ -12,7 +15,9 @@
     background-size: cover; /* Cambiado a 'cover' para ocupar todo el fondo */
     background-repeat: no-repeat;
     background-position: center;
-    overflow-x: hidden;
+    overflow: hidden;
+    overflow-x: hidden; /* Evita scroll horizontal */
+    overflow-y: hidden;
   }
 
   .game-container {
@@ -97,6 +102,7 @@
   .middle-image img {
     max-width: 100%;
     height: auto;
+    margin: 10%;
     margin-top: 20%;
     margin-bottom: 20%;
   }
@@ -227,7 +233,7 @@
     position: absolute;
     left: 40px;
     bottom: 208px;
-    width: 350px;
+    width: 80%;
     height: 50px;
     text-shadow: 2px 2px 1px #000;
     -webkit-text-stroke: 0.5px black;
@@ -246,7 +252,7 @@
     position: fixed;
     margin: 10px;
     bottom: 0;
-    width: 100px;
+    width: 160px;
     height: 2px;
     text-align: center;
     padding: 30px;
