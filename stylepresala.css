@@ -74,7 +74,7 @@
     cursor: pointer;
     box-shadow: 3px 3px 1px #000;
   }
-  
+
   #btnClearPlayers:hover {
     background-color: #e60000;
   }
@@ -115,7 +115,7 @@
   #playerList {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* Separación entre columnas */
+    width: 100%;
     padding: 0;
     margin: 20px 0;
   }
@@ -125,6 +125,10 @@
     list-style-type: none;
     padding: 0;
   }
+  #playerList .column li {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
 
   #playerList .column.left {
     text-align: left;
@@ -132,6 +136,16 @@
 
   #playerList .column.right {
     text-align: right;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    font-family: "Luckiest Guy";
+  }
+  .description{
+    margin: 20px;
   }
 }
 
@@ -235,7 +249,8 @@
   #playerList {
     display: flex;
     justify-content: space-between;
-    gap: 200px;
+    overflow-x: auto;
+    width: 100%;
     padding: 0;
     margin: 20px 0;
   }
@@ -246,7 +261,7 @@
     padding: 0;
   }
   #playerList .column li {
-    font-size: 1.3em;
+    font-size: 22px;
     margin-bottom: 10px;
   }
 
@@ -256,6 +271,16 @@
 
   #playerList .column.right {
     text-align: right;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    font-family: "Luckiest Guy";
+  }
+  .description{
+    margin: 20px;
   }
 }
 

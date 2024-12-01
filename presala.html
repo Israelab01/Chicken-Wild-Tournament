@@ -15,54 +15,68 @@
     />
   </head>
   <body>
-    
-      <div class="presala">
-        <h1>LOBBY</h1>
-      </div>
+    <div class="presala">
+      <h1>LOBBY</h1>
+    </div>
 
-      <div class="botones">
-        <button class="boton large" id="btnNext">GAME</button>
-      </div>
-      <button class="boton small" id="btnAddPlayer">ADD PLAYERS</button>
-      <button class="boton small" id="btnClearPlayers">CLEAR PLAYERS</button>
+    <div class="botones">
+      <button class="boton large" id="btnNext">GAME</button>
+    </div>
+    <button class="boton small" id="btnAddPlayer">ADD PLAYERS</button>
+    <button class="boton small" id="btnClearPlayers">CLEAR PLAYERS</button>
 
-      <audio id="background-audio" loop>
-        <source src="sounds/posibleIntro2.mp3" type="audio/mp3" />
-      </audio>
+    <audio id="background-audio" loop>
+      <source src="sounds/posibleIntro2.mp3" type="audio/mp3" />
+    </audio>
 
-      <div id="addPlayerForm" class="popup hidden">
-        <div class="popup-content">
-          <span
-            class="close-icon"
-            onclick="document.getElementById('addPlayerForm').classList.add('hidden');audioCloseWindow()"
-            >X</span
-          >
-          <h2>ADD PLAYERS</h2>
-          <form id="playerForm">
-            <input
-              type="text"
-              id="playerName"
-              placeholder="Name player"
-              required
-            />
-            <button id="buttonAdd" type="submit">Add</button>
-          </form>
-          <ul id="playerList" class="player-grid">
-            <div id="playerList" class="player-grid">
-              <div class="column left"></div>
-              <div class="column right"></div>
-            </div>
-          </ul>
-          <div id="playerListModal" class="popup hidden">
-            <div class="popup-content-players">
-              <span class="close-icon" onclick="closePlayerListModal()">X</span>
-              <h2 class="popup-title">Players</h2>
-              <ul class="popup-playerList" id="playerList"></ul>
-            </div>
+    <div id="addPlayerForm" class="popup hidden">
+      <div class="popup-content">
+        <span
+          class="close-icon"
+          onclick="document.getElementById('addPlayerForm').classList.add('hidden');audioCloseWindow()"
+          >X</span
+        >
+        <h2>ADD PLAYERS</h2>
+        <form id="playerForm">
+          <input
+            type="text"
+            id="playerName"
+            placeholder="Name player"
+            required
+          />
+          <button id="buttonAdd" type="submit">Add</button>
+        </form>
+        <ul id="playerList" class="player-grid">
+          <div id="playerList" class="player-grid">
+            <div class="column left"></div>
+            <div class="column right"></div>
+          </div>
+        </ul>
+        <div id="playerListModal" class="popup hidden">
+          <div class="popup-content-players">
+            <span class="close-icon" onclick="closePlayerListModal()">X</span>
+            <h2 class="popup-title">Players</h2>
+            <ul class="popup-playerList" id="playerList"></ul>
           </div>
         </div>
       </div>
-      <div id="messageContainer"></div>
+    </div>
+    <div id="messageContainer"></div>
+    <footer>
+      <div class="description">
+        <p>
+          ¡Sumérgete en un mundo de plumas y huevos! En nuestro torneo, cada
+          pollo es único y su destino está ligado al valor de su huevo. Al
+          inicio, recibirás una carta con tu pollo personalizado y un huevo de
+          valor aleatorio (madera, bronce, plata, oro, esmeralda o diamante).
+          ¡Enfréntate a otros jugadores aleatoriamente en duelos uno a uno! El
+          jugador con el huevo de mayor valor se llevará la victoria. ¡Asciende
+          por los brackets de eliminación: octavos, cuartos, semifinales y
+          final! ¿Serás tú quien se lleve el huevo de diamante y se convierta en
+          la leyenda del gallinero? ¡No te lo pierdas!
+        </p>
+      </div>
+    </footer>
   </body>
   <script src="mainPresala.js"></script>
 </html>
