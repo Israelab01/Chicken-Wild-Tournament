@@ -37,8 +37,6 @@ header {
   font-size: 24px;
   cursor: pointer;
 }
-
-/* Estilo de los botones */
 .button-menu {
   display: flex;
   flex-direction: column;
@@ -173,7 +171,6 @@ button:hover {
   margin: 0 5px;
 }
 
-/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -246,11 +243,13 @@ button:hover {
 .ranking img.visible {
   opacity: 1;
 }
-.eliminado {
+#resultado {
   color: #ffee00;
-  font-size: 1.5em;
   text-align: center;
+  font-size: 40px;
   margin: 10px 0;
+  text-shadow: 2px 2px 1px #000;
+  -webkit-text-stroke: 1.5px black;
 }
 footer {
   background-image: url("Images/extras/footerimg.png");

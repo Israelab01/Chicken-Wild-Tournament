@@ -12,11 +12,11 @@
     height: 100vh;
     background-color: #800404;
     background-image: url("Images/background/Movil.png");
-    background-size: cover; /* Cambiado a 'cover' para ocupar todo el fondo */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     overflow: hidden;
-    overflow-x: hidden; /* Evita scroll horizontal */
+    overflow-x: hidden;
     overflow-y: hidden;
   }
 
@@ -41,7 +41,6 @@
     cursor: pointer;
   }
 
-  /* Estilo de los botones */
   .button-menu {
     display: flex;
     flex-direction: column;
@@ -177,8 +176,6 @@
     width: 30px;
     margin: 0 3px;
   }
-
-  /* Modal Styles */
   .modal {
     display: none;
     position: fixed;

@@ -7,7 +7,9 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <title>LOBBY</title>
+    <link rel="icon" type="image/png" href="Images/extras/faviconCWT.png" />
     <link rel="stylesheet" href="stylePresala.css" />
+    <link rel="stylesheet" href="stylePresalaPhone.css" />
     <link rel="stylesheet" href="stylePopup.css" />
     <link
       rel="stylesheet"
@@ -64,19 +66,32 @@
     <div id="messageContainer"></div>
     <footer>
       <div class="description">
-        <p>
-          Immerse yourself in a world of feathers and eggs! In our tournament, each
-          chicken is unique and its destiny is linked to the value of its egg. To the
-          start, you will receive a letter with your personalized chicken and an egg
-          random value (wood, bronze, silver, gold, emerald or diamond).
-          Take on other players randomly in one-on-one duels! He
-          The player with the highest value egg will win. Ascend
-          through the elimination brackets: round of 16, quarterfinals, semifinals and
-          end! Will you be the one to take the diamond egg and become
-          the legend of the chicken coop? Don't miss it!
-        </p>
+        <img
+          src="Images/extras/botonInfo.png"
+          alt="info"
+          onclick="openInfoPopup()"
+          id="info-img"
+        />
       </div>
     </footer>
+
+    <div id="info-popup" class="info-popup" style="display: none">
+      <div class="info-popup-content">
+        <span class="info-close" onclick="closeInfoPopup()">X</span>
+        <h2 class="info-title">Info</h2>
+        <p>
+          Immerse yourself in a world of feathers and eggs! In our tournament,
+          each chicken is unique and its fate is tied to the value of its egg.
+          At the start, you will receive a card with your personalized chicken
+          and an egg of random value (wood, bronze, silver, gold, emerald or
+          diamond). Take on other players randomly in one-on-one duels! The
+          player with the highest value egg will win. Advance through the
+          elimination brackets: round of 16, quarterfinals, semifinals and
+          final! Will you be the one to take the diamond egg and become the
+          legend of the chicken coop? Don't miss it!
+        </p>
+      </div>
+    </div>
   </body>
   <script src="mainPresala.js"></script>
 </html>

@@ -20,8 +20,6 @@
     position: relative;
     transition: transform 0.1s ease, box-shadow 0.2s ease;
   }
-
-  /* Clases para los diferentes fondos */
   .wood {
     background-image: url("Images/cards/woodCard.webp");
   }
@@ -94,8 +92,6 @@
     position: relative;
     transition: transform 0.1s ease, box-shadow 0.2s ease;
   }
-
-  /* Clases para los diferentes fondos */
   .wood {
     background-image: url("Images/cards/woodCard.webp");
   }

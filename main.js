@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fightDisplay = document.getElementById('fight-number');
     const resultadoDiv = document.getElementById('resultado');
     const playButton = document.getElementById('start-btn');
+    const info = document.getElementById('info');
 
     function actualizarJugadoresVisual(jugador1, jugador2) {
         playerLeftName.textContent = jugador1.nombre;
@@ -72,8 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function iniciarBatalla() {
-        //Audio
-        
         const swordSound = new Audio('sounds/espadaChocando.mp3');
         swordSound.volume = 0.5;
         swordSound.play().catch((error) => {
@@ -209,20 +208,9 @@ function closePopup() {
     document.getElementById("popup").classList.add("hidden");
     audioCloseWindow();
 }
-
-function openBracket() {
-    document.getElementById("bracket").classList.remove("hidden");
-    audioOpenWindow();
-
-}
-
-function closeBracket() {
-    document.getElementById("bracket").classList.add("hidden");
-    audioCloseWindow();
-}
+  
 
 function openPlayerListModal() {
-    //audio
     
     const playerList = document.getElementById("playerList");
     playerList.innerHTML = "";
