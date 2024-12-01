@@ -14,7 +14,6 @@
     background-size: cover; /* Cambiado a 'cover' para ocupar todo el fondo */
     background-repeat: no-repeat;
     background-position: center;
-    font-family: "ka1";
     overflow-x: hidden;
   }
 
@@ -131,11 +130,12 @@
   }
 
   #playerList .column.left {
+    margin-left: 25px;
     text-align: left;
   }
 
   #playerList .column.right {
-    text-align: right;
+    text-align: left;
   }
   footer {
     position: fixed;
@@ -266,11 +266,12 @@
   }
 
   #playerList .column.left {
+    margin-left: 70px;
     text-align: left;
   }
 
   #playerList .column.right {
-    text-align: right;
+    text-align: left;
   }
   footer {
     position: fixed;

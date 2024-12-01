@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         if (jugadoresRestantes.length <= 1) {
             const ganadorFinal = jugadoresRestantes[0];
-            resultadoDiv.innerHTML = `<h2>¡El ganador final es ${ganadorFinal.nombre}!</h2>`;
+            resultadoDiv.innerHTML = `¡El ganador final es ${ganadorFinal.nombre}!`;
             playButton.disabled = true;
             return;
         }
