@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fightDisplay = document.getElementById('fight-number');
     const resultadoDiv = document.getElementById('resultado');
     const playButton = document.getElementById('start-btn');
+    const info = document.getElementById('info');
 
     function actualizarJugadoresVisual(jugador1, jugador2) {
         playerLeftName.textContent = jugador1.nombre;
@@ -72,16 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function iniciarBatalla() {
-        //Audio
-        
-        const swordSound = new Audio('sounds/espadaChocando.mp3'); // Ruta al sonido
-        swordSound.volume = 0.5; // Ajusta el volumen según prefieras
+        const swordSound = new Audio('sounds/espadaChocando.mp3');
+        swordSound.volume = 0.5;
         swordSound.play().catch((error) => {
             console.error('Error loading sound', error);
         });
         if (jugadoresRestantes.length <= 1) {
             const ganadorFinal = jugadoresRestantes[0];
-            resultadoDiv.innerHTML = `<h2>¡El ganador final es ${ganadorFinal.nombre}!</h2>`;
+            resultadoDiv.innerHTML = `¡The winner is: ${ganadorFinal.nombre}!`;
             playButton.disabled = true;
             return;
         }
@@ -134,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function iniciarAnimacionHuevos(jugador1, jugador2, callback) {
+    function iniciarAnimacionHuevos(player, player2, callback) {
         const contenedorJugador1 = document.querySelector('.player-left');
         const contenedorJugador2 = document.querySelector('.player-right');
 
@@ -182,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function mostrarEliminacion(jugadorEliminado, callback) {
         const mensaje = document.createElement('div');
         mensaje.classList.add('eliminado');
-        mensaje.textContent = `${jugadorEliminado.nombre} ha sido eliminado.`;
+        mensaje.textContent = `${jugadorEliminado.nombre} has been eliminated.`;
         listaEliminados.push(`${jugadorEliminado.nombre}`);
 
         resultadoDiv.appendChild(mensaje);
@@ -209,20 +208,9 @@ function closePopup() {
     document.getElementById("popup").classList.add("hidden");
     audioCloseWindow();
 }
-
-function openBracket() {
-    document.getElementById("bracket").classList.remove("hidden");
-    audioOpenWindow();
-
-}
-
-function closeBracket() {
-    document.getElementById("bracket").classList.add("hidden");
-    audioCloseWindow();
-}
+  
 
 function openPlayerListModal() {
-    //audio
     
     const playerList = document.getElementById("playerList");
     playerList.innerHTML = "";
@@ -237,12 +225,10 @@ function openPlayerListModal() {
 
 
         if (eliminadosSet.has(jugador)) {
-            //Estilo para jugadores eliminados
             li.style.textDecoration = "line-through";
             li.style.textDecorationColor = "red";
             li.style.color = "black";
         } else {
-            //Estilo para jugadores no eliminados
             li.style.color = "black";
         }
 
@@ -258,21 +244,17 @@ function closePlayerListModal() {
     audioCloseWindow();
 }
 
-// Función para manejar la inclinación dinámica
 function addHoverEffect(card) {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left; // Coordenada X relativa al div
-      const y = e.clientY - rect.top;  // Coordenada Y relativa al div
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top; 
 
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * 25; 
+      const rotateY = ((centerX - x) / centerX) * 25; 
 
-      // Calcula la rotación según la posición del cursor
-      const rotateX = ((y - centerY) / centerY) * 25; // Inclinación vertical
-      const rotateY = ((centerX - x) / centerX) * 25; // Inclinación horizontal
-
-      // Aplica la transformación
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       card.classList.add('active');
     });
@@ -283,7 +265,6 @@ function addHoverEffect(card) {
     });
   }
 
-  // Aplica la función a las dos clases distintas
   const card1 = document.querySelector('.player-left');
   const card2 = document.querySelector('.player-right');
 

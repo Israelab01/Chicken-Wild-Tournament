@@ -6,10 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnNext = document.getElementById("btnNext");
     const messageContainer = document.getElementById("messageContainer");
 
-    // Actualizar lista de jugadores al cargar
     updatePlayerList();
 
-    // Mostrar formulario para añadir jugadores
     btnAddPlayer.addEventListener("click", () => {
         const formContainer = document.getElementById("addPlayerForm");
         formContainer.classList.remove("hidden");
@@ -17,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
- // Manejar envío del formulario para agregar jugadores
 const form = document.getElementById("playerForm");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -32,7 +29,7 @@ form.addEventListener("submit", (e) => {
 
     if (playerName !== "" && listaJugadores.length < 16) {
         listaJugadores.push(playerName);
-        localStorage.setItem("listaJugadores", JSON.stringify(listaJugadores)); // Guardar en localStorage
+        localStorage.setItem("listaJugadores", JSON.stringify(listaJugadores)); 
         updatePlayerList();
         playerNameInput.value = "";
 
@@ -46,16 +43,14 @@ form.addEventListener("submit", (e) => {
 });
 
 
-    // Manejar limpieza de jugadores
     btnClearPlayers.addEventListener("click", () => {
-        listaJugadores.length = 0; // Vaciar array
-        localStorage.removeItem("listaJugadores"); // Limpiar almacenamiento
-        updatePlayerList(); // Actualizar pantalla
+        listaJugadores.length = 0; 
+        localStorage.removeItem("listaJugadores"); 
+        updatePlayerList(); 
         showMessage("The list of players has been emptied", "info");
         audioClearPlayers();
     });
 
-    // Verificar si hay suficientes jugadores para avanzar
     btnNext.addEventListener("click", (e) => {
         if (listaJugadores.length < 16) {
             e.preventDefault();
@@ -75,7 +70,6 @@ form.addEventListener("submit", (e) => {
         }
     });
 
-    // Mostrar mensajes dinámicos
     function showMessage(message, type) {
         const messageElement = document.createElement("div");
         messageElement.textContent = message;
@@ -85,10 +79,9 @@ form.addEventListener("submit", (e) => {
 
         setTimeout(() => {
             messageElement.remove();
-        }, 3000); // Eliminar mensaje después de 3 segundos
+        }, 3000); 
     }
 
-    // Actualizar lista visualmente
     function updatePlayerList() {
         const leftColumn = document.querySelector("#playerList .column.left");
         const rightColumn = document.querySelector("#playerList .column.right");
@@ -133,6 +126,19 @@ function audioClearPlayers(){
         console.error('Error loading sound', error);
     });
 }
+
+function openInfoPopup() {
+    document.getElementById("info-popup").style.display = "flex"; 
+    audioOpenWindow();
+  }
+  
+function closeInfoPopup() {
+    document.getElementById("info-popup").style.display = "none"; 
+    audioCloseWindow();
+  }
+  
+  
+  
 
 document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('background-audio');
