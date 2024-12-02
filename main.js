@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function mostrarEliminacion(jugadorEliminado, callback) {
         const mensaje = document.createElement('div');
         mensaje.classList.add('eliminado');
-        mensaje.textContent = `${jugadorEliminado.nombre} has been eliminated.`;
+        mensaje.textContent = `${jugadorEliminado.nombre} has been eliminated`;
         listaEliminados.push(`${jugadorEliminado.nombre}`);
 
         resultadoDiv.appendChild(mensaje);
