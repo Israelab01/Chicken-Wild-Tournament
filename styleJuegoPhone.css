@@ -212,6 +212,7 @@
 
   #playerList li {
     margin: 5px 0;
+    font-size: 5vw;
   }
 
   .ranking img {
