@@ -1,4 +1,4 @@
-@media (min-width: 481px) and (max-width: 2560px) {
+@media (min-width: 1101px) and (max-width: 2560px) {
 body {
   font-family: "Luckiest Guy";
   margin: 0;
@@ -109,7 +109,7 @@ main {
 }
 .buttons {
   position: absolute;
-  bottom: 10px;
+  bottom: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,4 +1,4 @@
-@media (min-width: 481px) and (max-width: 2560px) {
+@media (min-width: 1101px) and (max-width: 2560px) {
   @font-face {
     font-family: "ka1";
     src: url("fonts/ka1.ttf") format("truetype");
@@ -52,6 +52,78 @@
   .player-left h2,
   .player-right h2 {
     margin-top: 32px;
+    color: black;
+    font-family: "ka1", sans-serif;
+  }
+  .contenedor-left img,
+  .contenedor-right img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .contenedor-left img.visible,
+  .contenedor-right img.visible {
+    opacity: 1;
+  }
+}
+@media (min-width: 481px) and (max-width: 1101px) {
+  @font-face {
+    font-family: "ka1";
+    src: url("fonts/ka1.ttf") format("truetype");
+  }
+  .player-left,
+  .player-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25vw;
+    height: calc(25vw * 1.3);
+    background-image: url("Images/extras/carta.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    position: relative;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+  }
+  .wood {
+    background-image: url("Images/cards/woodCard.webp");
+  }
+  .bronze {
+    background-image: url("Images/cards/bronzeCard.webp");
+  }
+  .silver {
+    background-image: url("Images/cards/silverCard.webp");
+  }
+  .gold {
+    background-image: url("Images/cards/goldCard.webp");
+  }
+  .esmerald {
+    background-image: url("Images/cards/esmeraldCard.webp");
+  }
+  .diamond {
+    background-image: url("Images/cards/diamondCard.webp");
+  }
+
+  .active {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  }
+  .player-left img,
+  .player-right img {
+    margin-top: 8%;
+    width: 45%;
+    height: 40%;
+    filter: drop-shadow(4px 2px 3px rgba(0, 0, 0, 0.6));
+  }
+  .player-left h2,
+  .player-right h2 {
+    margin-top: 10%;
+    font-size: 2.25vw;
     color: black;
     font-family: "ka1", sans-serif;
   }
