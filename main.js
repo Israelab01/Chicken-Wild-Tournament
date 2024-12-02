@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         if (jugadoresRestantes.length <= 1) {
             const ganadorFinal = jugadoresRestantes[0];
-            resultadoDiv.innerHTML = `¡El ganador final es ${ganadorFinal.nombre}!`;
+            resultadoDiv.innerHTML = `¡The winner is: ${ganadorFinal.nombre}!`;
             playButton.disabled = true;
             return;
         }
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function iniciarAnimacionHuevos(jugador1, jugador2, callback) {
+    function iniciarAnimacionHuevos(player, player2, callback) {
         const contenedorJugador1 = document.querySelector('.player-left');
         const contenedorJugador2 = document.querySelector('.player-right');
 
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function mostrarEliminacion(jugadorEliminado, callback) {
         const mensaje = document.createElement('div');
         mensaje.classList.add('eliminado');
-        mensaje.textContent = `${jugadorEliminado.nombre} ha sido eliminado.`;
+        mensaje.textContent = `${jugadorEliminado.nombre} has been eliminated`;
         listaEliminados.push(`${jugadorEliminado.nombre}`);
 
         resultadoDiv.appendChild(mensaje);
