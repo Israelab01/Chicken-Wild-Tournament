@@ -245,19 +245,22 @@ function closePlayerListModal() {
 }
 
 function addHoverEffect(card) {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top; 
+    if(typeof window !== "undefined"){
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top; 
+        });
+    }
+    
 
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
       const rotateX = ((y - centerY) / centerY) * 25; 
       const rotateY = ((centerX - x) / centerX) * 25; 
-
+        
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       card.classList.add('active');
-    });
 
     card.addEventListener('mouseleave', () => {
       card.style.transform = 'rotateX(0deg) rotateY(0deg)';
@@ -287,3 +290,5 @@ function audioCloseWindow(){
         console.error('Error loading sound', error);
     });
 }
+
+module.exports = addHoverEffect;

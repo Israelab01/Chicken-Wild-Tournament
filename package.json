@@ -1,0 +1,16 @@
+{
+  "name": "chicken-wild-tournament",
+  "version": "1.0.0",
+  "description": "<<<<<<< HEAD\r <<<<<<< HEAD\r =======",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
