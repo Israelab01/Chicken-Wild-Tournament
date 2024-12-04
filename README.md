@@ -21,16 +21,20 @@
 
 ### Members
 
-  **Scrum Master:**
-- Jairo Alexandro Saborito Franco https://github.com/JairoAlexandro
+- **Scrum Master**  
+  [Jairo Alexandro Saborito Franco](https://github.com/JairoAlexandro)
 
-  **Product Owner:**
-- Javier Ariza Rosales https://github.com/JaviAriza
+- **Product Owner**  
+  [Javier Ariza Rosales](https://github.com/JaviAriza)
 
-  **Developers:**
-- Israel Abad Barrera https://github.com/Israelab01
-- Felipe Chacón Montero https://github.com/PhilippeInCode
-- Alejandro Gómez Ojeda https://github.com/AleGomoj
+- **Developer**  
+  [Israel Abad Barrera](https://github.com/Israelab01)
+
+- **Developer**  
+  [Felipe Chacón Montero](https://github.com/PhilippeInCode)
+
+- **Developer**  
+  [Alejandro Gómez Ojeda](https://github.com/AleGomoj)
 
 ---
 
