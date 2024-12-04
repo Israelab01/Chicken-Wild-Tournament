@@ -93,8 +93,8 @@ To ensure the reliability and functionality of **Chicken Wild Tournament**, a su
 
 #### Test Execution
 
-![captura9]()
-![captura10]()
+![captura9](https://github.com/Israelab01/Chicken-Wild-Tournament/blob/main/Images/extras/testImage.png?raw=true)
+![captura10](https://github.com/Israelab01/Chicken-Wild-Tournament/blob/main/Images/extras/testCodigo.png?raw=true)
 
 ---
 
