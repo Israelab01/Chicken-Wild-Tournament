@@ -23,13 +23,13 @@
 
   **Scrum Master:**
 - Jairo Alexandro Saborito Franco https://github.com/JairoAlexandro
+
   **Product Owner:**
 - Javier Ariza Rosales https://github.com/JaviAriza
-  **Developer:**
+
+  **Developers:**
 - Israel Abad Barrera https://github.com/Israelab01
-  **Developer:**
 - Felipe Chacón Montero https://github.com/PhilippeInCode
-  **Developer:**
 - Alejandro Gómez Ojeda https://github.com/AleGomoj
 
 ---
