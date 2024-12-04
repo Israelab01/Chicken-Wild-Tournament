@@ -32,7 +32,6 @@ html {
   height: 100%;
   background-image: url("Images/background/indexPC.png");
   background-size: contain;
-  background-repeat: no-repeat;
   background-position: center;
   display: flex;
   flex-direction: column;
@@ -102,7 +101,6 @@ html {
     height: 100%;
     background-image: url("Images/background/indexMovil.png");
     background-size: contain;
-    background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: column;
