@@ -1,6 +1,6 @@
 # Chicken Wild Tournament
 
-[Web Preview]()cambiar
+[Play the game!](https://cwt-five.vercel.app/)
 
 ### Description
 
