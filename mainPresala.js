@@ -155,3 +155,5 @@ document.addEventListener('DOMContentLoaded', () => {
       audio.play();
     }, { once: true });
   });
+
+  module.exports = {listaJugadores, audioOpenWindow, audioCloseWindow, audioClearPlayers};
