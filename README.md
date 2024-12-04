@@ -13,6 +13,7 @@
 - [Screenshots](#screenshots)
 - [Stacks](#stacks)
 - [Methodology](#methodology)
+- [Testing](#testing)
 - [Next](#next)
 - [License](#license)
 
