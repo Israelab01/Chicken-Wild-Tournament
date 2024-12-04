@@ -88,6 +88,7 @@ With the initial phases of **Chicken Wild Tournament** successfully completed, t
 
 This approach ensures that Chicken Wild Tournament remains engaging, fair, and scalable, creating a solid foundation for continued growth and player satisfaction.
 
+---
 
 ### License
 
