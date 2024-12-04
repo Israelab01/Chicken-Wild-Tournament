@@ -20,11 +20,11 @@
 
 ### Members
 
-- Jairo Alexandro Saborito Franco https://github.com/JairoAlexandro
-- Israel Abad Barrera https://github.com/Israelab01
-- Felipe Chacón Montero https://github.com/PhilippeInCode
-- Javier Ariza Rosales https://github.com/JaviAriza
-- Alejandro Gómez Ojeda https://github.com/AleGomoj
+- **Scrum Master:** Jairo Alexandro Saborito Franco https://github.com/JairoAlexandro
+- **Product Owner:** Javier Ariza Rosales https://github.com/JaviAriza
+- **Developer:** Israel Abad Barrera https://github.com/Israelab01
+- **Developer:** Felipe Chacón Montero https://github.com/PhilippeInCode
+- **Developer:** Alejandro Gómez Ojeda https://github.com/AleGomoj
 
 ---
 
@@ -71,6 +71,30 @@ At Chicken Wild Tournament, we follow a structured and agile methodology designe
 4. **Launch and Continuous Optimization**: After launch, we monitor the game’s performance, player engagement, and satisfaction through key metrics. Our team remains proactive in making updates to enhance gameplay, add new features, and fix any issues. Regular optimization ensures that Chicken Wild Tournament remains engaging and provides a fair experience for all players.
 
 This methodology enables us to adapt flexibly to player needs while maintaining a strong focus on quality, performance, and user enjoyment.
+
+---
+
+### Testing
+
+To ensure the reliability and functionality of **Chicken Wild Tournament**, a suite of tests was implemented using **Jest**. These tests focus on verifying critical features and behaviors in the application. Below are the main aspects covered:
+
+#### Test Overview
+
+1. **Player Management Tests**:
+   - Verified the initialization of the player list (`listaJugadores`).
+   - Ensured correct behavior for core player management functionalities.
+
+2. **Audio Functionality Tests**:
+   - Mocked the `Audio` API to simulate sound playback.
+   - Tested functions to ensure the correct audio files are played with proper configurations:
+     - `audioOpenWindow`: Plays a sound when a window is opened.
+     - `audioCloseWindow`: Plays a sound when a window is closed.
+     - `audioClearPlayers`: Plays a sound when players are cleared.
+
+#### Test Execution
+
+![captura9]()
+![captura10]()
 
 ---
 
